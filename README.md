@@ -1,4 +1,3 @@
-
 [<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#foss-credits)
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
@@ -836,16 +835,14 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 
 ## Used Trademarks
-QR Code:<br>
-<i href="https://www.denso-wave.com" style="cursor:pointer;" title="DENSO WAVE Incorporated">
-<img src="https://milliontech.com/wp-content/uploads/2017/01/Denso-Wave-Logo-300x102.png" height="auto" width="128" title="DENSO WAVE Incorporated" >
-</i>
+"QR Code" from :<br>
+[<img title="DENSO WAVE Incorporated" src="https://milliontech.com/wp-content/uploads/2017/01/Denso-Wave-Logo-300x102.png" height="auto" width="128">](https://www.denso-wave.com)
 
 
-Algorand:<br>
-<i title="Algorand Technologies" href="https://algorand.com" style="cursor:pointer;">
-<img src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128" >
-</i>
+
+"Algorand" from:<br>
+[<img title="Algorand Technologies" src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">](https://algorand.com)
+
 
 
 
