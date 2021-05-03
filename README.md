@@ -1,4 +1,5 @@
-![alt text]((https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg "Algorand Payment QR Generator")
+![alt text]( "Algorand Payment QR Generator")
+<img src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg" height="256" width="256">
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
@@ -806,7 +807,7 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 (Coming soon...)
 
 ## Links
-- [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ )
+
 - [Algorand payment prompts](https://github.com/soldair/node-qrcode)
 - [Algorand payment prompts](https://github.com/soldair/node-qrcode)
 
@@ -815,7 +816,8 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
--  This lib is based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
+-  This is directly based on [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ )
+-  This lib is indirectly based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
 
 
 ## License
@@ -826,4 +828,5 @@ The word "QR Code" is registered trademark of:<br>
 
 
 The word "Algorand" is registered trademark of:<br>
-![alt text]((https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png "Algorand Technologies")
+<img src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">
+[Algorand Technologies](https://www.algorand.com)
