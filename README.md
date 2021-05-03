@@ -1,5 +1,5 @@
 ![alt text]( "Algorand Payment QR Generator")
-<img src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg" height="256" width="256">
+<img src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100" height="256" width="256">
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
@@ -829,4 +829,3 @@ The word "QR Code" is registered trademark of:<br>
 
 The word "Algorand" is registered trademark of:<br>
 <img src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">
-[Algorand Technologies](https://www.algorand.com)
