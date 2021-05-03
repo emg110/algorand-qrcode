@@ -58,7 +58,37 @@ function processInputs (text, opts) {
 
 var argv = yargs
   .detectLocale(false)
-  .usage('Usage: $0 [options] <input string>')
+  .usage('Usage: $0 [options]')
+  .option('x', {
+    alias: 'xnote',
+    description: 'Algorand URI xnote field',
+    group: 'Algorand URI params:',
+    type: 'string'
+  })
+  .option('p', {
+    alias: 'amount',
+    description: 'Algorand URI amount field',
+    group: 'Algorand URI params:',
+    type: 'number'
+  })
+  .option('b', {
+    alias: 'label',
+    description: 'Algorand URI label field',
+    group: 'Algorand URI params:',
+    type: 'string'
+  })
+  .option('a', {
+    alias: 'asset',
+    description: 'Algorand URI asset id field',
+    group: 'Algorand URI params:',
+    type: 'string'
+  })
+  .option('n', {
+    alias: 'note',
+    description: 'Algorand URI note field',
+    group: 'Algorand URI params:',
+    type: 'string'
+  })
   .option('v', {
     alias: 'qversion',
     description: 'QR Code symbol version (1 - 40)',
@@ -133,9 +163,9 @@ var argv = yargs
   .help('h')
   .alias('h', 'help')
   .version()
-  .example('$0 "some text"', 'Draw in terminal window')
-  .example('$0 -o out.png "some text"', 'Save as png image')
-  .example('$0 -d F00 -o out.png "some text"', 'Use red as foreground color')
+  .example('$0 -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Draw in terminal window')
+  .example('$0 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Save as png image')
+  .example('$0 -d F00 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Use red as foreground color')
   .parserConfiguration({'parse-numbers': false})
   .argv
 

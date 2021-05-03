@@ -86,7 +86,6 @@ npm install -g algorand-payment-qr
 Usage: qrcode [options]
 
 Algorand switch:
-  -i, --meta meta headers are available                                [boolean]
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
 
 Algorand options:
@@ -415,16 +414,12 @@ Server:
 - [toFileStream()](#tofilestreamstream-text-options)
 
 ### Browser API
-#### `create(params, [options])`
+#### `create([options])`
 Creates QR Code symbol and returns a qrcode object.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
-
 ##### `options`
-See [QR Code options](#qr-code-options).
+See [QR Code options](#qr-code-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `returns`
 Type: `Object`
@@ -442,8 +437,8 @@ Type: `Object`
 
 <br>
 
-#### `toCanvas(canvasElement, params, [options], [cb(error)])`
-#### `toCanvas(params, [options], [cb(error, canvas)])`
+#### `toCanvas(canvasElement, [options], [cb(error)])`
+#### `toCanvas([options], [cb(error, canvas)])`
 Draws qr code symbol to canvas.<br>
 If `canvasElement` is omitted a new canvas is returned.
 
@@ -452,13 +447,10 @@ Type: `DOMElement`
 
 Canvas where to draw QR Code.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
-See [Options](#options).
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -477,8 +469,8 @@ QRCode.toCanvas('I am an Algorand Developer!', { errorCorrectionLevel: 'H' }, fu
 
 <br>
 
-#### `toDataURL(params, [options], [cb(error, url)])`
-#### `toDataURL(canvasElement, params, [options], [cb(error, url)])`
+#### `toDataURL([options], [cb(error, url)])`
+#### `toDataURL(canvasElement, [options], [cb(error, url)])`
 Returns a Data URI containing a representation of the QR Code image.<br>
 If provided, `canvasElement` will be used as canvas to generate the data URI.
 
@@ -486,11 +478,6 @@ If provided, `canvasElement` will be used as canvas to generate the data URI.
 Type: `DOMElement`
 
 Canvas where to draw QR Code.
-
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
 - ###### `type`
@@ -506,7 +493,8 @@ Algorand payment prompt parameters to be used to create an Algorand URI and the 
 
   A Number between `0` and `1` indicating image quality if the requested type is `image/jpeg` or `image/webp`.
 
-See [Options](#options) for other settings.
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -535,15 +523,10 @@ QRCode.toDataURL('I am an Algorand Developer!', opts, function (err, url) {
 ```
 <br>
 
-#### `toString(params, [options], [cb(error, string)])`
+#### `toString([options], [cb(error, string)])`
 
 Returns a string representation of the QR Code.<br>
 
-
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
 - ###### `type`
@@ -553,7 +536,8 @@ Algorand payment prompt parameters to be used to create an Algorand URI and the 
   Output format.<br>
   Possible values are: `terminal`,`utf8`, and `svg`.
 
-See [Options](#options) for other settings.
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -572,22 +556,20 @@ QRCode.toString('http://www.algorand.com', function (err, string) {
 
 
 ### Server API
-#### `create(params, [options])`
-See [create](#createtext-options).
+#### `create([options])`
+See [create](#createtext-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 <br>
 
-#### `toCanvas(canvas, params, [options], [cb(error)])`
+#### `toCanvas(canvas, [options], [cb(error)])`
 Draws qr code symbol to [node canvas](https://github.com/Automattic/node-canvas).
 
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
-See [Options](#options).
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -596,17 +578,14 @@ Callback function called on finish.
 
 <br>
 
-#### `toDataURL(params, [options], [cb(error, url)])`
+#### `toDataURL([options], [cb(error, url)])`
 Returns a Data URI containing a representation of the QR Code image.<br>
 Only works with `image/png` type for now.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
-See [Options](#options) for other settings.
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -615,24 +594,20 @@ Callback function called on finish.
 
 <br>
 
-#### `toString(params, [options], [cb(error, string)])`
+#### `toString([options], [cb(error, string)])`
 Returns a string representation of the QR Code.<br>
 If choosen output format is `svg` it will returns a string containing xml code.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
-
 ##### `options`
-- ###### `type`
+###### `type`
   Type: `String`<br>
   Default: `utf8`
 
   Output format.<br>
   Possible values are: `utf8`, `svg`, `terminal`.
 
-See [Options](#options) for other settings.
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -649,7 +624,7 @@ QRCode.toString('http://www.algorand.com', function (err, string) {
 
 <br>
 
-#### `toFile(path, params, [options], [cb(error)])`
+#### `toFile(path, [options], [cb(error)])`
 Saves QR Code to image file.<br>
 If `options.type` is not specified, the format will be guessed from file extension.<br>
 Recognized extensions are `png`, `svg`, `txt`.
@@ -659,10 +634,6 @@ Type: `String`
 
 Path where to save the file.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
 - ###### `type`
@@ -684,7 +655,8 @@ Algorand payment prompt parameters to be used to create an Algorand URI and the 
 
   Compression strategy for deflate.
 
-See [Options](#options) for other settings.
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
 Type: `Function`
@@ -706,7 +678,7 @@ QRCode.toFile('path/to/filename.png', 'I am an Algorand Developer!', {
 
 <br>
 
-#### `toFileStream(stream, params, [options])`
+#### `toFileStream(stream, [options])`
 Writes QR Code image to stream. Only works with `png` format for now.
 
 ##### `stream`
@@ -714,24 +686,25 @@ Type: `stream.Writable`
 
 Node stream.
 
-##### `params`
-Type: `Object`
-
-Algorand payment prompt parameters to be used to create an Algorand URI and the a QR | barcode out of it.
 
 ##### `options`
-See [Options](#options).
+See [All Options](#all-options).<br>
+See [Algorand URI options](#algorand-uri-params).
 
 <br>
+--------
+<br>
+<br>
 
-### Options
+### All Options
 
 #### QR Code options
+
 ##### `version`
   Type: `Number`<br>
 
   QR Code version. If not specified the more suitable value will be calculated.
-
+    
 ##### `errorCorrectionLevel`
   Type: `String`<br>
   Default: `M`
@@ -751,6 +724,34 @@ See [Options](#options).
 
   Helper function used internally to convert a kanji to its Shift JIS value.<br>
   Provide this function if you need support for Kanji mode.
+  
+#### Algorand URI params
+
+##### `xnote`
+  Type: `Boolean`<br>
+
+  Specifies if the xnote or note field is used for Algorand URI construction.
+  
+##### `amount`
+  Type: `Number`<br>
+
+  Amount of Algorand transaction in MicroAlgos or Standard Asset Unit.
+  
+##### `label`
+  Type: `String`<br>
+
+  Label of Algorand payment transaction.
+
+##### `asset`
+  Type: `String`<br>
+
+  Asset Id of Algorand payment transaction if used. If not specified Algo will be used as payment fungible token.
+  
+##### `note`
+  Type: `String`<br>
+
+  note or xnote field content of Algorand payment transaction. The xnote option determines the name of the field with this content to be note or xnote.
+
 
 #### Renderers options
 ##### `margin`
