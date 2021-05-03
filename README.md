@@ -1,11 +1,19 @@
-<img src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">
+
+[<img title="Algorand Technologies" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#foss-credits)
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
-
-[![npm](https://img.shields.io/static/v1?label=Algorand&message=Dev&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
-[![npm](https://img.shields.io/static/v1?label=Build&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
+[![npm](https://img.shields.io/static/v1?label=Algorand&message=Draft&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
+[![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
+
+## Algorand Foundation Solution Pulication
+#### This repository is made to accompany a solution publication for Algorand Foundation's developer ambassidor program
+<i title="Algorand Foundation" href="https://algorand.foundation/" style="cursor:pointer;">
+<img src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128" >
+</i>
+
+## Table of contents
 
 - [Highlights](#highlights)
 - [Installation](#installation)
@@ -807,24 +815,36 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 ## Links
 
+- [Algorand payment prompts](https://developer.algorand.org/docs/reference/payment_prompts/)
 - [Algorand payment prompts](https://github.com/soldair/node-qrcode)
-- [Algorand payment prompts](https://github.com/soldair/node-qrcode)
+
+## License
+[MIT](https://github.com/emg110/algorand-payment-qr/blob/master/license)
+
 
 ## FOSS Credits
 > This repository uses and appreciates great open source software and code from forking, extention and integration of:
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
--  This is directly based on [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ )
+-  The idea for this lib was inspired by Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 -  This lib is indirectly based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
 
-
-## License
-[MIT](https://github.com/emg110/algorand-payment-qr/blob/master/license)
-
-The word "QR Code" is registered trademark of:<br>
-[DENSO WAVE Incorporated](https://www.denso-wave.com)
+## Banner image curtsey
+-  [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ), Article's banner from Jason Paulos.
 
 
-The word "Algorand" is registered trademark of:<br>
-<img src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">
+## Used Trademarks
+QR Code:<br>
+<i href="https://www.denso-wave.com" style="cursor:pointer;" title="DENSO WAVE Incorporated">
+<img src="https://milliontech.com/wp-content/uploads/2017/01/Denso-Wave-Logo-300x102.png" height="auto" width="128" title="DENSO WAVE Incorporated" >
+</i>
+
+
+Algorand:<br>
+<i title="Algorand Technologies" href="https://algorand.com" style="cursor:pointer;">
+<img src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128" >
+</i>
+
+
+
