@@ -11,29 +11,15 @@ A javascript module with a comprehensive set of tools to generates an standard A
 [<img title="Algorand Foundation" src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128">](https://algorand.foundation/)
 
 
-## Technical specifications
+## Technical notes
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
-- This library can be built for browser, be imported or required in NodeJS or directly used via CLI or terminal.
 - Requires NodeJS version >= 10
-- Algorand URI's ABNF Grammar:  
-    ```javascript
-    algorandurn     = "algorand://" algorandaddress [ "?" algorandparams ]
-    algorandaddress = *base32
-    algorandparams  = algorandparam [ "&" algorandparams ]
-    algorandparam   = [ amountparam / labelparam / noteparam / assetparam / otherparam ]
-    amountparam     = "amount=" *digit
-    labelparam      = "label=" *qchar
-    assetparam      = "asset=" *digit
-    noteparam       = (xnote | note)
-    xnote           = "xnote=" *qchar
-    note            = "note=" *qchar
-    otherparam      = qchar *qchar [ "=" *qchar ]
-    ```
 
 
 
 ## Table of contents
 
+- [Algorand URI's ABNF Grammar](#algorand-uri-abnf-grammar)
 - [Highlights](#highlights)
 - [Installation](#installation)
 - [Algorand Payment Prompts ](#Algorand)
@@ -48,17 +34,37 @@ A javascript module with a comprehensive set of tools to generates an standard A
 - [Credits](#credits)
 - [License](#license)
 
+## Algorand URI ABNF Grammar
+
+```javascript
+    algorandurn     = "algorand://" algorandaddress [ "?" algorandparams ]
+    algorandaddress = *base32
+    algorandparams  = algorandparam [ "&" algorandparams ]
+    algorandparam   = [ amountparam / labelparam / noteparam / assetparam / otherparam ]
+    amountparam     = "amount=" *digit
+    labelparam      = "label=" *qchar
+    assetparam      = "asset=" *digit
+    noteparam       = (xnote | note)
+    xnote           = "xnote=" *qchar
+    note            = "note=" *qchar
+    otherparam      = qchar *qchar [ "=" *qchar ]
+```
+
+
 
 ## Highlights
-- Works on server and client (and react native with svg)
+- This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
+- Supports RFC 3986 and Algorand URI ABNF Grammar
+- Automatically escapes HTML
 - CLI utility
-- Save QR code as image
+- Save QR code as image (SVG, PNG, JPEG,...)
+- Support for some styling and colors (dark , light,..)
 - Support for Numeric, Alphanumeric, Kanji and Byte mode
 - Support for mixed modes
 - Support for chinese, cyrillic, greek and japanese characters
 - Support for multibyte characters (like emojis :smile:)
 - Auto generates optimized segments for best data compression and smallest QR Code size
-- App agnostic readability, QR Codes by definition are app agnostic
+- App agnostic readability, Generated QR Codes by definition are app agnostic
 
 ## Installation
 Inside your project folder do:
