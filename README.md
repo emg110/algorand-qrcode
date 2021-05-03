@@ -12,15 +12,32 @@ A javascript module with a comprehensive set of tools to generates an standard A
 
 
 ## Technical specifications
-- [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/)
+- Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
+- This library can be built for browser, be imported or required in NodeJS or directly used via CLI or terminal.
+- Requires NodeJS version >= 10
+- Algorand URI's ABNF Grammar:  
+    ```javascript
+    algorandurn     = "algorand://" algorandaddress [ "?" algorandparams ]
+    algorandaddress = *base32
+    algorandparams  = algorandparam [ "&" algorandparams ]
+    algorandparam   = [ amountparam / labelparam / noteparam / assetparam / otherparam ]
+    amountparam     = "amount=" *digit
+    labelparam      = "label=" *qchar
+    assetparam      = "asset=" *digit
+    noteparam       = (xnote | note)
+    xnote           = "xnote=" *qchar
+    note            = "note=" *qchar
+    otherparam      = qchar *qchar [ "=" *qchar ]
+    ```
+
 
 
 ## Table of contents
 
 - [Highlights](#highlights)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Algorand Payment Prompts ](#Algorand)
+- [Usage](#usage)
 - [Error correction level](#error-correction-level)
 - [QR Code capacity](#qr-code-capacity)
 - [Encoding Modes](#encoding-modes)
@@ -55,6 +72,9 @@ or, install it globally to use `qrcode` from the command line to save Algorand U
 ```shell
 npm install -g algorand-payment-qr
 ```
+## Algorand
+This library extends functionality on [node-qrcode](https://github.com/soldair/node-qrcode) by adding 
+RFC 3986 encoding and HTML escaping support and extending the input from simple string (or array of strings) to Algorand URI parameters object , constructed from extended contexts.
 
 ## Usage
 ### CLI
