@@ -19,10 +19,9 @@ A javascript module with a comprehensive set of tools to generates an standard A
 
 ## Table of contents
 
-- [Algorand URI's ABNF Grammar](#algorand-uri-abnf-grammar)
 - [Highlights](#highlights)
+- [Algorand URI's ABNF Grammar](#algorand-uri-abnf-grammar)
 - [Installation](#installation)
-- [Algorand Payment Prompts ](#Algorand)
 - [Usage](#usage)
 - [Error correction level](#error-correction-level)
 - [QR Code capacity](#qr-code-capacity)
@@ -33,6 +32,21 @@ A javascript module with a comprehensive set of tools to generates an standard A
 - [GS1 QR Codes](#gs1-qr-codes)
 - [Credits](#credits)
 - [License](#license)
+
+
+## Highlights
+- This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
+- Supports RFC 3986 and Algorand URI ABNF Grammar
+- Automatically escapes HTML
+- CLI utility
+- Save QR code as image (SVG, PNG, JPEG,...)
+- Support for some styling and colors (dark , light,..)
+- Support for Numeric, Alphanumeric, Kanji and Byte mode
+- Support for mixed modes
+- Support for chinese, cyrillic, greek and japanese characters
+- Support for multibyte characters (like emojis :smile:)
+- Auto generates optimized segments for best data compression and smallest QR Code size
+- App agnostic readability, Generated QR Codes by definition are app agnostic
 
 ## Algorand URI ABNF Grammar
 
@@ -51,21 +65,6 @@ A javascript module with a comprehensive set of tools to generates an standard A
 ```
 
 
-
-## Highlights
-- This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
-- Supports RFC 3986 and Algorand URI ABNF Grammar
-- Automatically escapes HTML
-- CLI utility
-- Save QR code as image (SVG, PNG, JPEG,...)
-- Support for some styling and colors (dark , light,..)
-- Support for Numeric, Alphanumeric, Kanji and Byte mode
-- Support for mixed modes
-- Support for chinese, cyrillic, greek and japanese characters
-- Support for multibyte characters (like emojis :smile:)
-- Auto generates optimized segments for best data compression and smallest QR Code size
-- App agnostic readability, Generated QR Codes by definition are app agnostic
-
 ## Installation
 Inside your project folder do:
 
@@ -78,25 +77,23 @@ or, install it globally to use `qrcode` from the command line to save Algorand U
 ```shell
 npm install -g algorand-payment-qr
 ```
-## Algorand
-This library extends functionality on [node-qrcode](https://github.com/soldair/node-qrcode) by adding 
-RFC 3986 encoding and HTML escaping support and extending the input from simple string (or array of strings) to Algorand URI parameters object , constructed from extended contexts.
+
 
 ## Usage
 ### CLI
 #### Notice : when using Algorand key other extra parameters regarding Algorand URI for payment propmpt are required (see the following sections) 
 ```
-Usage: qrcode [options] <input string | params>
+Usage: qrcode [options]
 
 Algorand switch:
-  -a, --algorand Get Algorand URI params instead of input string       [boolean]
+  -i, --meta meta headers are available                                [boolean]
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
 
 Algorand options:
-  --amount Amount (in Micro Algos) of Algorand payment transaction      [number]
-  --label Label of Algorand payment transaction                         [string]
-  --asset Algorand asset id (in case of Algorand ASA transfer)          [string]
-  --note note/xnote (depends on -a | --xnote switch)                    [string]
+  -p, --amount Amount (in Micro Algos) of Algorand payment transaction  [number]
+  -b, --label Label of Algorand payment transaction                     [string]
+  -a, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
+  -n, --note note/xnote (depends on -a | --xnote switch)                [string]
 
 QR Code options:
   -v, --qversion  QR Code symbol version (1 - 40)                       [number]
@@ -118,9 +115,12 @@ Options:
   --version     Show version number                                    [boolean]
 
 Examples:
-  qrcode "some text"                    Draw in terminal window
-  qrcode -o out.png "some text"         Save as png image
-  qrcode -d F00 -o out.png "some text"  Use red as foreground color
+    - Draw in terminal window:
+    qrcode -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
+    - Save as png image:
+    qrcode -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
+    - Use red as foreground color:
+    qrcode -d F00 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
@@ -132,7 +132,7 @@ Recognized extensions are `png`, `svg` and `txt`.
 
 ```javascript
 // index.js -> bundle.js
-var QRCode = require('qrcode')
+var QRCode = require('algorand-payment-qr')
 var canvas = document.getElementById('canvas')
 
 QRCode.toCanvas(canvas, 'sample text', function (error) {
@@ -415,13 +415,8 @@ Server:
 - [toFileStream()](#tofilestreamstream-text-options)
 
 ### Browser API
-#### `create(text | params, [options])`
+#### `create(params, [options])`
 Creates QR Code symbol and returns a qrcode object.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -447,8 +442,8 @@ Type: `Object`
 
 <br>
 
-#### `toCanvas(canvasElement, text | params, [options], [cb(error)])`
-#### `toCanvas(text | params, [options], [cb(error, canvas)])`
+#### `toCanvas(canvasElement, params, [options], [cb(error)])`
+#### `toCanvas(params, [options], [cb(error, canvas)])`
 Draws qr code symbol to canvas.<br>
 If `canvasElement` is omitted a new canvas is returned.
 
@@ -456,11 +451,6 @@ If `canvasElement` is omitted a new canvas is returned.
 Type: `DOMElement`
 
 Canvas where to draw QR Code.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -487,8 +477,8 @@ QRCode.toCanvas('I am an Algorand Developer!', { errorCorrectionLevel: 'H' }, fu
 
 <br>
 
-#### `toDataURL(text | params, [options], [cb(error, url)])`
-#### `toDataURL(canvasElement, text | params, [options], [cb(error, url)])`
+#### `toDataURL(params, [options], [cb(error, url)])`
+#### `toDataURL(canvasElement, params, [options], [cb(error, url)])`
 Returns a Data URI containing a representation of the QR Code image.<br>
 If provided, `canvasElement` will be used as canvas to generate the data URI.
 
@@ -496,11 +486,6 @@ If provided, `canvasElement` will be used as canvas to generate the data URI.
 Type: `DOMElement`
 
 Canvas where to draw QR Code.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -550,15 +535,10 @@ QRCode.toDataURL('I am an Algorand Developer!', opts, function (err, url) {
 ```
 <br>
 
-#### `toString(text | params, [options], [cb(error, string)])`
+#### `toString(params, [options], [cb(error, string)])`
 
 Returns a string representation of the QR Code.<br>
 
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -592,18 +572,14 @@ QRCode.toString('http://www.algorand.com', function (err, string) {
 
 
 ### Server API
-#### `create(text | params, [options])`
+#### `create(params, [options])`
 See [create](#createtext-options).
 
 <br>
 
-#### `toCanvas(canvas, text | params, [options], [cb(error)])`
+#### `toCanvas(canvas, params, [options], [cb(error)])`
 Draws qr code symbol to [node canvas](https://github.com/Automattic/node-canvas).
 
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -620,14 +596,9 @@ Callback function called on finish.
 
 <br>
 
-#### `toDataURL(text | params, [options], [cb(error, url)])`
+#### `toDataURL(params, [options], [cb(error, url)])`
 Returns a Data URI containing a representation of the QR Code image.<br>
 Only works with `image/png` type for now.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -644,14 +615,9 @@ Callback function called on finish.
 
 <br>
 
-#### `toString(text | params, [options], [cb(error, string)])`
+#### `toString(params, [options], [cb(error, string)])`
 Returns a string representation of the QR Code.<br>
 If choosen output format is `svg` it will returns a string containing xml code.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -683,7 +649,7 @@ QRCode.toString('http://www.algorand.com', function (err, string) {
 
 <br>
 
-#### `toFile(path, text | params, [options], [cb(error)])`
+#### `toFile(path, params, [options], [cb(error)])`
 Saves QR Code to image file.<br>
 If `options.type` is not specified, the format will be guessed from file extension.<br>
 Recognized extensions are `png`, `svg`, `txt`.
@@ -692,11 +658,6 @@ Recognized extensions are `png`, `svg`, `txt`.
 Type: `String`
 
 Path where to save the file.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
@@ -745,18 +706,13 @@ QRCode.toFile('path/to/filename.png', 'I am an Algorand Developer!', {
 
 <br>
 
-#### `toFileStream(stream, text | params, [options])`
+#### `toFileStream(stream, params, [options])`
 Writes QR Code image to stream. Only works with `png` format for now.
 
 ##### `stream`
 Type: `stream.Writable`
 
 Node stream.
-
-##### `text`
-Type: `String|Array`
-
-Text to encode or a list of objects describing segments.
 
 ##### `params`
 Type: `Object`
