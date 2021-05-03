@@ -8,9 +8,8 @@ A javascript module with a comprehensive set of tools to generates an standard A
 
 ## Algorand Foundation Solution Pulication
 #### This repository is made to accompany a solution publication for Algorand Foundation's developer ambassidor program
-<i title="Algorand Foundation" href="https://algorand.foundation/" style="cursor:pointer;">
-<img src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128" >
-</i>
+[<img title="Algorand Foundation" src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128">](https://algorand.foundation/)
+
 
 ## Technical specifications
 - [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/)
