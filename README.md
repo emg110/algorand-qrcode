@@ -1,5 +1,5 @@
 
-[<img title="Algorand Technologies" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#foss-credits)
+[<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#foss-credits)
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
@@ -12,6 +12,10 @@ A javascript module with a comprehensive set of tools to generates an standard A
 <i title="Algorand Foundation" href="https://algorand.foundation/" style="cursor:pointer;">
 <img src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128" >
 </i>
+
+## Technical specifications
+- [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/)
+
 
 ## Table of contents
 
@@ -813,10 +817,6 @@ Color of light module. Value must be in hex format (RGBA).<br>
 What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
 (Coming soon...)
 
-## Links
-
-- [Algorand payment prompts](https://developer.algorand.org/docs/reference/payment_prompts/)
-- [Algorand payment prompts](https://github.com/soldair/node-qrcode)
 
 ## License
 [MIT](https://github.com/emg110/algorand-payment-qr/blob/master/license)
@@ -827,7 +827,8 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
--  The idea for this lib was inspired by Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
+-  The idea for this lib was inspired by:
+   -  Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 -  This lib is indirectly based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
 
 ## Banner image curtsey
