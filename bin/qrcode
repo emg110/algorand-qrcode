@@ -3,7 +3,7 @@ var yargs = require('yargs')
 var qr = require('../lib')
 
 function save (file, options) {
-  qr.toFile(file, options, function (err, data) {
+  qr.toFile(file, alrorandURI, options, function (err, data) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
@@ -15,7 +15,7 @@ function save (file, options) {
 
 function print (options) {
   options.type = 'terminal'
-  qr.toString(options, function (err) {
+  qr.toString(alrorandURI, options, function (err) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
