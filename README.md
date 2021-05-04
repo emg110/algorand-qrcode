@@ -90,24 +90,27 @@ Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
 
 Algorand options:
-  -p, --amount Amount (in Micro Algos) of Algorand payment transaction  [number]
-  -b, --label Label of Algorand payment transaction                     [string]
-  -a, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
+  -a, --amount Amount (in Micro Algos) of Algorand payment transaction  [number]
+  -l, --label Label of Algorand payment transaction                     [string]
+  -s, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
   -n, --note note/xnote (depends on -a | --xnote switch)                [string]
+  -d, --dest Destination Wallet address (Algorand account address)      [string]
 
 QR Code options:
   -v, --qversion  QR Code symbol version (1 - 40)                       [number]
   -e, --error     Error correction level           [choices: "L", "M", "Q", "H"]
   -m, --mask      Mask pattern (0 - 7)                                  [number]
 
+
 Renderer options:
   -t, --type        Output type                  [choices: "png", "svg", "utf8"]
   -w, --width       Image width (px)                                    [number]
-  -s, --scale       Scale factor                                        [number]
+  -r, --ratio       Scale ratio factor                                  [number]
   -q, --qzone       Quiet zone size                                     [number]
-  -l, --lightcolor  Light RGBA hex color
-  -d, --darkcolor   Dark RGBA hex color
-  --small  Output smaller QR code to terminal                          [boolean]
+  -b, --background  Light RGBA hex color
+  -f, --foreground   Dark RGBA hex color
+  -p, --puny  Output smaller QR code to terminal                       [boolean]
+  -i, --inverse  Invert foreground and background colors               [boolean]
 
 Options:
   -o, --output  Output file

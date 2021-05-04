@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 var yargs = require('yargs')
 var qr = require('../lib')
+const Utils = require('./renderer/utils')
 
 function save (file, options) {
+  const {address, xnote, note, label, amount, asset} = options;
+  const alrorandURI = `algorand://${address}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+
   qr.toFile(file, alrorandURI, options, function (err, data) {
     if (err) {
       console.error('Error:', err.message)
@@ -68,19 +72,25 @@ var argv = yargs
     group: 'Algorand URI params:',
     type: 'string'
   })
-  .option('p', {
+  .option('d', {
+    alias: 'dest',
+    description: 'Algorand URI destination wallet (account) address field',
+    group: 'Algorand URI params:',
+    type: 'number'
+  })
+  .option('a', {
     alias: 'amount',
     description: 'Algorand URI amount field',
     group: 'Algorand URI params:',
     type: 'number'
   })
-  .option('b', {
+  .option('l', {
     alias: 'label',
     description: 'Algorand URI label field',
     group: 'Algorand URI params:',
     type: 'string'
   })
-  .option('a', {
+  .option('s', {
     alias: 'asset',
     description: 'Algorand URI asset id field',
     group: 'Algorand URI params:',
@@ -130,9 +140,9 @@ var argv = yargs
     group: 'Renderer options:',
     type: 'number'
   })
-  .option('s', {
-    alias: 'scale',
-    description: 'Scale factor',
+  .option('r', {
+    alias: 'ratio',
+    description: 'Scale ratio factor',
     conflicts: 'width',
     group: 'Renderer options:',
     type: 'number'
@@ -143,17 +153,18 @@ var argv = yargs
     group: 'Renderer options:',
     type: 'number'
   })
-  .option('l', {
-    alias: 'lightcolor',
-    description: 'Light RGBA hex color',
+  .option('b', {
+    alias: 'background',
+    description: 'background RGBA hex color',
     group: 'Renderer options:'
   })
-  .option('d', {
-    alias: 'darkcolor',
-    description: 'Dark RGBA hex color',
+  .option('f', {
+    alias: 'foreground',
+    description: 'Foreground RGBA hex color',
     group: 'Renderer options:'
   })
-  .option('small', {
+  .option('p', {
+    alias: 'puny',
     type: 'boolean',
     description: 'Output smaller QR code to terminal',
     conflicts: 'type',
