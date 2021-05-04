@@ -4,8 +4,11 @@ var qr = require('../lib')
 const Utils = require('./renderer/utils')
 
 function save (file, options) {
-  const {address, xnote, note, label, amount, asset} = options;
-  const alrorandURI = `algorand://${address}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+  const {wallet, xnote, note, label, amount, asset} = options;
+  let alrorandURI = `algorand://${wallet}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+  alrorandURI = Utils.escapeHtml(alrorandURI);
+  alrorandURI = Utils.encodeUrl(alrorandURI);
+
 
   qr.toFile(file, alrorandURI, options, function (err, data) {
     if (err) {
@@ -19,6 +22,10 @@ function save (file, options) {
 
 function print (options) {
   options.type = 'terminal'
+  const {wallet, xnote, note, label, amount, asset} = options;
+  let alrorandURI = `algorand://${wallet}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+  alrorandURI = Utils.escapeHtml(alrorandURI);
+  alrorandURI = Utils.encodeUrl(alrorandURI);
   qr.toString(alrorandURI, options, function (err) {
     if (err) {
       console.error('Error:', err.message)
@@ -30,6 +37,7 @@ function print (options) {
 function parseOptions (args) {
   return {
     xnote: args.xnote,
+    wallet: args.dest,
     amount: args.amount,
     label: args.label,
     asset: args.asset,
@@ -37,15 +45,15 @@ function parseOptions (args) {
     version: args.qversion,
     errorCorrectionLevel: args.error,
     type: args.type,
-    small: !!args.small,
+    small: !!args.puny,
     inverse: !!args.inverse,
     maskPattern: args.mask,
     margin: args.qzone,
     width: args.width,
-    scale: args.scale,
+    scale: args.ratio,
     color: {
-      light: args.lightcolor,
-      dark: args.darkcolor
+      light: args.background,
+      dark: args.foreground
     }
   }
 }
