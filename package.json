@@ -31,7 +31,14 @@
     "standard": "^14.3.3",
     "tap": "^14.10.7"
   },
-  "scripts": {},
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "node --throw-deprecation test.js",
+    "build": "rollup -c",
+    "prepublish": "npm run build",
+    "browser": "node examples/clientsideserver.js"
+  },
   "author": "M.Ghiasi [emg110@gmail.com]",
   "license": "MIT",
   "bugs": {

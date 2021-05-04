@@ -1,4 +1,4 @@
-[<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#foss-credits)
+[<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#credits)
 # Algorand Payment QR Generator
 A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
@@ -30,6 +30,7 @@ A javascript module with a comprehensive set of tools to generates an standard A
 - [Multibyte characters](#multibyte-characters)
 - [API](#api)
 - [GS1 QR Codes](#gs1-qr-codes)
+- [Used Trademarks](#used-trademarks)
 - [Credits](#credits)
 - [License](#license)
 
@@ -418,6 +419,7 @@ Server:
 Creates QR Code symbol and returns a qrcode object.
 
 ##### `options`
+
 See [QR Code options](#qr-code-options).<br>
 See [Algorand URI options](#algorand-uri-params).
 
@@ -449,6 +451,7 @@ Canvas where to draw QR Code.
 
 
 ##### `options`
+
 See [All Options](#all-options).<br>
 See [Algorand URI options](#algorand-uri-params).
 
@@ -480,6 +483,7 @@ Type: `DOMElement`
 Canvas where to draw QR Code.
 
 ##### `options`
+
 - ###### `type`
   Type: `String`<br>
   Default: `image/png`
@@ -529,6 +533,7 @@ Returns a string representation of the QR Code.<br>
 
 
 ##### `options`
+
 - ###### `type`
   Type: `String`<br>
   Default: `utf8`
@@ -568,6 +573,7 @@ Draws qr code symbol to [node canvas](https://github.com/Automattic/node-canvas)
 
 
 ##### `options`
+
 See [All Options](#all-options).<br>
 See [Algorand URI options](#algorand-uri-params).
 
@@ -599,6 +605,7 @@ Returns a string representation of the QR Code.<br>
 If choosen output format is `svg` it will returns a string containing xml code.
 
 ##### `options`
+
 ###### `type`
   Type: `String`<br>
   Default: `utf8`
@@ -636,6 +643,7 @@ Path where to save the file.
 
 
 ##### `options`
+
 - ###### `type`
   Type: `String`<br>
   Default: `png`
@@ -688,13 +696,10 @@ Node stream.
 
 
 ##### `options`
+
 See [All Options](#all-options).<br>
 See [Algorand URI options](#algorand-uri-params).
 
-<br>
---------
-<br>
-<br>
 
 ### All Options
 
@@ -792,7 +797,6 @@ Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
 
-<br>
 
 ## GS1 QR Codes
 What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
@@ -803,7 +807,7 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 [MIT](https://github.com/emg110/algorand-payment-qr/blob/master/license)
 
 
-## FOSS Credits
+## Credits
 > This repository uses and appreciates great open source software and code from forking, extention and integration of:
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
@@ -824,7 +828,3 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 "Algorand" from:<br>
 [<img title="Algorand Technologies" src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">](https://algorand.com)
-
-
-
-
