@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var yargs = require('yargs')
 var qr = require('../lib')
-const Utils = require('./renderer/utils')
+const Utils = require('../lib/renderer/utils')
 
 function save (file, options) {
   const {wallet, xnote, note, label, amount, asset} = options;
@@ -84,7 +84,7 @@ var argv = yargs
     alias: 'dest',
     description: 'Algorand URI destination wallet (account) address field',
     group: 'Algorand URI params:',
-    type: 'number'
+    type: 'string'
   })
   .option('a', {
     alias: 'amount',

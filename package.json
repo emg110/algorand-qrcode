@@ -11,7 +11,7 @@
     "dijkstrajs": "^1.0.1",
     "encode-utf8": "^1.0.3",
     "pngjs": "^5.0.0",
-    "yargs": "^15.3.1"
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -39,12 +39,22 @@
     "prepublish": "npm run build",
     "browser": "node examples/clientsideserver.js"
   },
-  "author": "M.Ghiasi [emg110@gmail.com]",
+  "author": "M.Ghiasi <emg110@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/emg110/algorand-payment-qr/issues"
   },
-  "main": "main.js",
+  "main": "./lib/index.js",
+  "browser": {
+    "./lib/index.js": "./lib/browser.js",
+    "fs": false
+  },
+  "files": [
+    "bin",
+    "build",
+    "lib",
+    "helper"
+  ],
   "homepage": "https://github.com/emg110/algorand-payment-qr#readme",
   "browserslist": {
     "production": [
