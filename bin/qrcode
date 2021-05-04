@@ -26,10 +26,12 @@ function print (options) {
   let alrorandURI = `algorand://${wallet}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
   alrorandURI = Utils.escapeHtml(alrorandURI);
   alrorandURI = Utils.encodeUrl(alrorandURI);
-  qr.toString(alrorandURI, options, function (err) {
+  qr.toString(alrorandURI, options, function (err, resqr) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
+    }else{
+      console.log(resqr);
     }
   })
 }
