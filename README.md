@@ -841,3 +841,6 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 "Algorand" from:<br>
 [<img title="Algorand Technologies" src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">](https://algorand.com)
+
+
+<embed type="text/html" src="./examples/index.html" width="500" height="200">

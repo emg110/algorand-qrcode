@@ -5,7 +5,7 @@ const fs = require("fs");
 const QRCode = require("../lib");
 const canvasutil = require("canvasutil");
 const { createCanvas, loadImage } = require("canvas");
-
+const favicon = require('express-favicon');
 const path = require("path");
 
 // app.use(express.methodOverride())
@@ -13,6 +13,7 @@ const path = require("path");
 // app.use(app.router)
 // app.use(express.static(path.resolve(__dirname, '..')))
 
+app.use(favicon(__dirname + '/favicon.ico'));
 app.get("/qrcode.js", (req, res) => {
   res.set("content-type", "text/javascript");
   fs.createReadStream(path.join(__dirname, "..", "build", "qrcode.js")).pipe(
