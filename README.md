@@ -1,4 +1,4 @@
-[<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#credits)
+[<img title="Algorand Payment Prompts" src="./examples/images/algorand-payment-qr-banner.png">](#algorand-payment-qr-generator)
 
 # Algorand Payment QR Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Draft&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
