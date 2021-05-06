@@ -14,6 +14,7 @@ A javascript module with a comprehensive set of tools to generates an standard A
 ## Technical notes
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version >= 10
+- Since all the texts for Algorand URI fields is HTML Escaped and RFC 3986 encoded, for 
 
 
 
@@ -72,13 +73,22 @@ Inside your project folder do:
 ```shell
 npm install --save algorand-payment-qr
 ```
+and then 
+
+```shell
+cd bin && node qrcode
+```
 
 or, install it globally to use `qrcode` from the command line to save Algorand URI qrcode and barcode   images or generate ones you can view in your terminal.
 
 ```shell
 npm install -g algorand-payment-qr
 ```
+and then 
 
+```shell
+qrcode [options]
+```
 
 ## Usage
 ### CLI
@@ -119,11 +129,11 @@ Options:
 
 Examples:
     - Draw in terminal window:
-    qrcode -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
+    node qrcode -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand payment QR code generator" -p
     - Save as png image:
-    qrcode -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
+    node qrcode -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand payment QR code generator"
     - Use red as foreground color:
-    qrcode -d F00 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"
+    node qrcode -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand payment QR code generator"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
@@ -167,7 +177,7 @@ Require the module `algorand-payment-qr`
 ```javascript
 var QRCode = require('algorand-payment-qr')
 
-QRCode.toDataURL('I am an Algorand Developer!', function (err, url) {
+QRCode.toDataURL({}, function (err, url) {
   console.log(url)
 })
 ```
@@ -176,7 +186,7 @@ render a qrcode for the terminal
 ```js
 var QRCode = require('algorand-payment-qr')
 
-QRCode.toString('I am an Algorand Developer!',{type:'terminal'}, function (err, url) {
+QRCode.toString({type:'terminal'}, function (err, url) {
   console.log(url)
 })
 ```
@@ -188,7 +198,7 @@ Promises and Async/Await can be used in place of callback function.
 import QRCode from 'algorand-payment-qr'
 
 // With promises
-QRCode.toDataURL('I am an Algorand Developer!')
+QRCode.toDataURL({})
   .then(url => {
     console.log(url)
   })
@@ -199,7 +209,7 @@ QRCode.toDataURL('I am an Algorand Developer!')
 // With async/await
 const generateQR = async text => {
   try {
-    console.log(await QRCode.toDataURL(text))
+    console.log(await QRCode.toDataURL({}))
   } catch (err) {
     console.error(err)
   }
@@ -229,7 +239,7 @@ Error level can be set through `options.errorCorrectionLevel` property.<br>
 If not specified, the default value is `M`.
 
 ```javascript
-QRCode.toDataURL('some text', { errorCorrectionLevel: 'H' }, function (err, url) {
+QRCode.toDataURL({}, { errorCorrectionLevel: 'H' }, function (err, url) {
   console.log(url)
 })
 ```
@@ -554,7 +564,7 @@ Callback function called on finish.
 
 ##### Example
 ```javascript
-QRCode.toString('http://www.algorand.com', function (err, string) {
+QRCode.toString({}, function (err, string) {
   if (err) throw err
   console.log(string)
 })
@@ -626,7 +636,7 @@ Callback function called on finish.
 
 ##### Example
 ```javascript
-QRCode.toString('http://www.algorand.com', function (err, string) {
+QRCode.toString({}, function (err, string) {
   if (err) throw err
   console.log(string)
 })

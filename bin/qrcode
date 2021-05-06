@@ -3,14 +3,56 @@ var yargs = require('yargs')
 var qr = require('../lib')
 const Utils = require('../lib/renderer/utils')
 
-function save (file, options) {
-  const {wallet, xnote, note, label, amount, asset} = options;
-  let alrorandURI = `algorand://${wallet}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+function constructUri (options){
+  let {wallet, xnote, note, label, amount, asset} = options;
+  let alrorandURI = '';
+  if(asset){
+    if(asset.length===0)asset = null;
+
+  }
+  if(amount){
+    if(!(Number(amount)>=0)){
+      amount = null;
+    }
+    
+  }
+  if(label){
+    if(label.length === 0){
+      label = null;
+    }
+    
+  }
+  if(!note){
+    note = ''
+  }
+  if(!xnote){
+    xnote = false
+  }
+//alrorandURI = `algorand://${wallet}?${label ? 'label='+label : ''}${amount ? '&amount='+amount : ''}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
+  
+  if(!amount && label){
+    alrorandURI = `algorand://${wallet}?label=${label}`
+    
+    
+  }else if(!label && asset && amount){
+    alrorandURI = `algorand://${wallet}?amount=${amount}&asset=${asset}${xnote ? '&xnote='+note : '&note='+note}`
+    
+  }else if(label && !asset && amount){
+    alrorandURI = `algorand://${wallet}?amount=${amount}&label=${label}${xnote ? '&xnote='+note : '&note='+note}`
+   
+  }else if(label && asset && amount){
+    alrorandURI = `algorand://${wallet}?amount=${amount}&asset=${asset}&label=${label}${xnote ? '&xnote='+note : '&note='+note}`
+   
+  }
+
   alrorandURI = Utils.escapeHtml(alrorandURI);
   alrorandURI = Utils.encodeUrl(alrorandURI);
+  console.log('Generated Algorand URI: ', alrorandURI)
+  return alrorandURI;
+}
 
-
-  qr.toFile(file, alrorandURI, options, function (err, data) {
+function save (file, options) {
+  qr.toFile(file, options, function (err, data) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
@@ -22,11 +64,7 @@ function save (file, options) {
 
 function print (options) {
   options.type = 'terminal'
-  const {wallet, xnote, note, label, amount, asset} = options;
-  let alrorandURI = `algorand://${wallet}?label=${label}&amount=${amount}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
-  alrorandURI = Utils.escapeHtml(alrorandURI);
-  alrorandURI = Utils.encodeUrl(alrorandURI);
-  qr.toString(alrorandURI, options, function (err, resqr) {
+  qr.toString(options, function (err, resqr) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
@@ -104,7 +142,7 @@ var argv = yargs
     alias: 'asset',
     description: 'Algorand URI asset id field',
     group: 'Algorand URI params:',
-    type: 'string'
+    type: 'number'
   })
   .option('n', {
     alias: 'note',
@@ -187,9 +225,9 @@ var argv = yargs
   .help('h')
   .alias('h', 'help')
   .version()
-  .example('$0 -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Draw in terminal window')
-  .example('$0 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Save as png image')
-  .example('$0 -d F00 -o out.png -p 1000000 -b "Payment for coffee" -a 45 -n "This is a test transaction for QR code generator"', 'Use red as foreground color')
+  .example('$0 -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Draw in terminal window')
+  .example('$0 -o out.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Save as png image')
+  .example('$0 -f F00 -o out.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Use red as foreground color')
   .parserConfiguration({'parse-numbers': false})
   .argv
 
