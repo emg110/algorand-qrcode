@@ -662,9 +662,6 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
    -  Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 -  This lib is indirectly based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
 
-## Banner image curtsey
--  [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ), Article's banner from Jason Paulos.
-
 
 ## Mentioned Trademarks
 "QR Code" curtsey of :<br>
