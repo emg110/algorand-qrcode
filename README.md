@@ -53,10 +53,7 @@ A comprehensive javascript module with a complete set of tools to generates an s
 - CLI utility
 - Save QR code as image (SVG, PNG, JPEG,...)
 - Support for some styling and colors (dark , light,..)
-- Support for Numeric, Alphanumeric, Kanji and Byte mode
-- Support for mixed modes
-- Support for chinese, cyrillic, greek and japanese characters
-- Support for multibyte characters (like emojis :smile:)
+- Support for chinese, cyrillic, greek and japanese characters in transaction labels and notes
 - Auto generates optimized segments for best data compression and smallest QR Code size
 - App agnostic readability, Generated QR Codes by definition are app agnostic
 
@@ -73,7 +70,6 @@ A comprehensive javascript module with a complete set of tools to generates an s
     noteparam       = (xnote | note)
     xnote           = "xnote=" *qchar
     note            = "note=" *qchar
-    otherparam      = qchar *qchar [ "=" *qchar ]
 ```
 
 
