@@ -6,15 +6,11 @@
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
+<div style="display:block;text-align:center;">
+<img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 
-<div >
-<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-cli.png" height="auto" width="150">
-<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-api-server.png" height="auto" width="150">
-<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-static-server.png" height="auto" width="150">
-<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-web-form.png" height="auto" width="150">
-<i style="cursor:pointer" target="_blank" href="./examples/images/generated-qr.png"><img style="display:inline-block" title="Algorand Technologies" src="./examples/images/generated-qr.png" height="auto" width="150"></i>
+<p style="display:block;background:#4fcdf0;">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 </div>
-
 
 
 ## Technical notes
@@ -24,6 +20,7 @@ A comprehensive javascript module with a complete set of tools to generates an s
 
 ## Table of contents
 
+- [Screenshots](#screenshots)
 - [Highlights](#highlights)
 - [Algorand URI's ABNF Grammar](#algorand-uri-abnf-grammar)
 - [Installation](#installation)
@@ -39,6 +36,15 @@ A comprehensive javascript module with a complete set of tools to generates an s
 - [Credits](#credits)
 - [License](#license)
 
+## Screenshots
+<div style="display:block">
+
+<img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-payment-qr-cli.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-payment-qr-api-server.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generation node example" src="./examples/images/algorand-payment-qr-static-server.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-payment-qr-web-form.png" height="auto" width="150">
+
+</div>
 
 ## Highlights
 - This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
