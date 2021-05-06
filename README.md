@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
 
-A comprehensive javascript module with a complete set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
+A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 <div style="display:block;text-align:center;">
 <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 
