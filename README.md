@@ -579,11 +579,6 @@ See [Algorand URI options](#algorand-uri-params).
   Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.<br>
   If not specified the more suitable value will be calculated.
 
-##### `toSJISFunc`
-  Type: `Function`<br>
-
-  Helper function used internally to convert a kanji to its Shift JIS value.<br>
-  Provide this function if you need support for Kanji mode.
   
 #### Algorand URI params
 
