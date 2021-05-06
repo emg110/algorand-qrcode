@@ -658,7 +658,7 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 
 ## Credits
-> This repository uses and appreciates great open source software and code from forking, extention and integration of:
+> This repository uses and appreciates great open source software and code by forking, extention and integration of:
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
