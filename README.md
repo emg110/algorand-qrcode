@@ -98,7 +98,7 @@ qrcode [options]
 
 ## Usage
 ### CLI
-#### Notice : when using Algorand key other extra parameters regarding Algorand URI for payment propmpt are required (see the following sections) 
+
 ```
 Usage: qrcode [options]
 
