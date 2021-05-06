@@ -17,7 +17,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand developers portal publication: [Algorand Payment Prompt QR generator](https://developer.algorand.org/solutions/algorand-payment-qr-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version >= 10
-- Since all the texts for Algorand URI fields is HTML Escaped and RFC 3986 encoded, for 
 
 ## Table of contents
 
@@ -655,12 +654,12 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 
 ## Credits
+> Special appreciations to  [Sheghzo](https://github.com/sheghzo/).
 > This repository uses and appreciates great open source software and code by forking, extention and integration of:
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
--  The idea for this lib was inspired by:
-   -  Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
+-  The idea for this lib was inspired by: Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 -  This lib is indirectly based on "QRCode for JavaScript", MIT licensed by Kazuhiko Arase.
 
 
