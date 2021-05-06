@@ -1,22 +1,26 @@
 [<img title="Algorand Payment Prompts" src="https://algorand-developer-portal.tryprism.com/static/Posts/2021/04/23%2011:10/042121-QR.jpg?w=2000&cmd=resize_then_crop&height=714&quality=100">](#credits)
-# Algorand Payment QR Generator
-A javascript module with a comprehensive set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Export media types are File, UTF8 text and DataURL. Works both in Node and modern browsers.
 
+# Algorand Payment QR Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Draft&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
 [![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
 
-## Algorand Foundation Solution Pulication
-#### This repository is made to accompany a solution publication for Algorand Foundation's developer ambassidor program
-[<img title="Algorand Foundation" src="https://github.com/algorandfoundation/grow-algorand/raw/master/img/logo.png" height="auto" width="128">](https://algorand.foundation/)
+A comprehensive javascript module with a complete set of tools to generates an standard Algorand URI (RFC 3986) and  QR code/2d barcode ,exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
+
+<div >
+<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-cli.png" height="auto" width="150">
+<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-api-server.png" height="auto" width="150">
+<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-static-server.png" height="auto" width="150">
+<img style="display:inline-block" title="Algorand Technologies" src="./examples/images/algorand-payment-qr-web-form.png" height="auto" width="150">
+<i style="cursor:pointer" target="_blank" href="./examples/images/generated-qr.png"><img style="display:inline-block" title="Algorand Technologies" src="./examples/images/generated-qr.png" height="auto" width="150"></i>
+</div>
+
 
 
 ## Technical notes
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version >= 10
 - Since all the texts for Algorand URI fields is HTML Escaped and RFC 3986 encoded, for 
-
-
 
 ## Table of contents
 
@@ -833,14 +837,12 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 -  [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ), Article's banner from Jason Paulos.
 
 
-## Used Trademarks
-"QR Code" from :<br>
+## Mentioned Trademarks
+"QR Code" curtsey of :<br>
 [<img title="DENSO WAVE Incorporated" src="https://milliontech.com/wp-content/uploads/2017/01/Denso-Wave-Logo-300x102.png" height="auto" width="128">](https://www.denso-wave.com)
 
 
 
-"Algorand" from:<br>
+"Algorand" curtsey of:<br>
 [<img title="Algorand Technologies" src="https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png" height="auto" width="128">](https://algorand.com)
 
-
-<embed type="text/html" src="./examples/index.html" width="500" height="200">
