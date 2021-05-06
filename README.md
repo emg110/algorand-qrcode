@@ -1,7 +1,7 @@
 [<img title="Algorand Payment Prompts" src="./examples/images/algorand-payment-qr-banner.png">](#algorand-payment-qr-generator)
 
 # Algorand Payment QR Generator
-[![npm](https://img.shields.io/static/v1?label=Algorand&message=Draft&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
+[![npm](https://img.shields.io/static/v1?label=Algorand&message=Review&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
 [![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
 
