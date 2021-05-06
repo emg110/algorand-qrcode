@@ -1,4 +1,4 @@
-[<img title="Algorand Payment Prompts" src="./examples/images/algorand-payment-qr-banner.png">](#algorand-payment-qr-generator)
+[<img title="Algorand Payment Prompts" src="./examples/images/algorand-payment-qr-banner.png">](https://developer.algorand.org/solutions/algorand-payment-qr-generator-javascript/)
 
 # Algorand Payment QR Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Review&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
@@ -14,6 +14,7 @@ A comprehensive javascript module with a complete set of tools to generates an s
 
 
 ## Technical notes
+- Algorand developers portal publication: [Algorand Payment Prompt QR generator](https://developer.algorand.org/solutions/algorand-payment-qr-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version >= 10
 - Since all the texts for Algorand URI fields is HTML Escaped and RFC 3986 encoded, for 
