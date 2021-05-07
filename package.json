@@ -1,6 +1,6 @@
 {
   "name": "algorand-payment-qr",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "QR generator universal module for Algorand's payment prompt",
   "repository": {
     "type": "git",
