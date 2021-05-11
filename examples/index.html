@@ -216,7 +216,7 @@
     var errorEl = document.getElementById('error')
     var versionEl = document.getElementById('version')
     var errorLevelEl = document.getElementById('errorLevel')
-    var modeEl = document.getElementById('mode')
+    /* var modeEl = document.getElementById('mode') */
     var marginEl = document.getElementById('margin')
     var lightColorEl = document.getElementById('lightColor')
     var darkColorEl = document.getElementById('darkColor')
@@ -268,10 +268,11 @@
         },
         toSJISFunc: QRCode.toSJIS
       }
-      var mode = modeEl.options[modeEl.selectedIndex].text
-      if (mode !== 'Auto') {
+      //var mode = modeEl.options[modeEl.selectedIndex].text
+      /* if (mode !== 'Auto') {
         options.mode = mode;
-      } 
+      }  */
+      options.mode = 'Auto';
       QRCode.toCanvas(canvasEl, options).then( (res)=> {
         canvasEl.style.display = 'inline'
         var algoUriEl = document.getElementById('algorand-uri-result')
