@@ -1,10 +1,10 @@
 {
-  "name": "algorand-payment-qr",
-  "version": "1.0.3",
-  "description": "QR generator universal module for Algorand's payment prompt",
+  "name": "algorand-qrcode",
+  "version": "1.0.4",
+  "description": "Algorand's universal QR generator javascript module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emg110/algorand-payment-qr.git"
+    "url": "git+https://github.com/emg110/algorand-qrcode.git"
   },
   "private": false,
   "dependencies": {
@@ -42,7 +42,7 @@
   "author": "M.Ghiasi <emg110@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emg110/algorand-payment-qr/issues"
+    "url": "https://github.com/emg110/algorand-qrcode/issues"
   },
   "main": "./lib/index.js",
   "browser": {
@@ -55,7 +55,7 @@
     "lib",
     "helper"
   ],
-  "homepage": "https://github.com/emg110/algorand-payment-qr#readme",
+  "homepage": "https://github.com/emg110/algorand-qrcode#readme",
   "browserslist": {
     "production": [
       ">0.2%",

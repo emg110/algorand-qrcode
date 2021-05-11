@@ -1,9 +1,9 @@
-[<img title="Algorand Payment Prompts" src="./examples/images/algorand-payment-qr-banner.png">](https://developer.algorand.org/solutions/algorand-payment-qr-generator-javascript/)
+[<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.png">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
 
-# Algorand Payment QR Generator
-[![npm](https://img.shields.io/static/v1?label=Algorand&message=Review&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-payment-qr-generator/)
-[![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-payment-qr)
-[![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-payment-qr/blob/master/license)
+# Algorand QR Code Generator
+[![npm](https://img.shields.io/static/v1?label=Algorand&message=Review&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-qrcode-generator/)
+[![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-qrcode)
+[![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 <div style="display:block;text-align:center;">
@@ -14,7 +14,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 
 ## Technical notes
-- Algorand developers portal publication: [Algorand Payment Prompt QR generator](https://developer.algorand.org/solutions/algorand-payment-qr-generator-javascript/).
+- Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version >= 10
 
@@ -35,10 +35,10 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Screenshots
 <div style="display:block">
 
-<img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-payment-qr-cli.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-payment-qr-api-server.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generation node example" src="./examples/images/algorand-payment-qr-static-server.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-payment-qr-web-form.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-qrcode-cli.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-qrcode-api-server.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generation node example" src="./examples/images/algorand-qrcode-static-server.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form.png" height="auto" width="150">
 
 </div>
 
@@ -73,7 +73,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 Inside your project folder do:
 
 ```shell
-npm install --save algorand-payment-qr
+npm install --save algorand-qrcode
 ```
 and then 
 
@@ -84,7 +84,7 @@ cd bin && node qrcode
 or, install it globally to use `qrcode` from the command line to save Algorand URI qrcode and barcode   images or generate ones you can view in your terminal.
 
 ```shell
-npm install -g algorand-payment-qr
+npm install -g algorand-qrcode
 ```
 and then 
 
@@ -102,8 +102,8 @@ Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
 
 Algorand options:
-  -a, --amount Amount (in Micro Algos) of Algorand payment transaction  [number]
-  -l, --label Label of Algorand payment transaction                     [string]
+  -a, --amount Amount (in Micro Algos) of Algorand transaction  [number]
+  -l, --label Label of Algorand transaction                     [string]
   -s, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
   -n, --note note/xnote (depends on -a | --xnote switch)                [string]
   -d, --dest Destination Wallet address (Algorand account address)      [string]
@@ -131,23 +131,23 @@ Options:
 
 Examples:
     - Draw in terminal window:
-    node qrcode -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand payment QR code generator" -p
+    node qrcode -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
     - Save as png image:
-    node qrcode -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand payment QR code generator"
+    node qrcode -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
     - Use red as foreground color:
-    node qrcode -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand payment QR code generator"
+    node qrcode -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
 
 ### Browser
-`algorand-payment-qr` can be used in browser through including the precompiled bundle present in `build/` folder.
+`algorand-qrcode` can be used in browser through including the precompiled bundle present in `build/` folder.
 
 
 
 ```javascript
 // index.js -> bundle.js
-var QRCode = require('algorand-payment-qr')
+var QRCode = require('algorand-qrcode')
 var canvas = document.getElementById('canvas')
 
 QRCode.toCanvas(canvas, {wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (error) {
@@ -169,15 +169,15 @@ QRCode.toCanvas(canvas, {wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETK
 </script>
 ```
 
-If you install through `npm`, precompiled files will be available in `node_modules/algorand-payment-qr/build/` folder.
+If you install through `npm`, precompiled files will be available in `node_modules/algorand-qrcode/build/` folder.
 
 The precompiled bundle have support for [Internet Explorer 10+, Safari 5.1+, and all evergreen browsers](https://browserl.ist/?q=defaults%2C+IE+%3E%3D+10%2C+Safari+%3E%3D+5.1).
 
 ### NodeJS
-Require the module `algorand-payment-qr`
+Require the module `algorand-qrcode`
 
 ```javascript
-var QRCode = require('algorand-payment-qr')
+var QRCode = require('algorand-qrcode')
 
 QRCode.toDataURL({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, url) {
   console.log(url)
@@ -186,7 +186,7 @@ QRCode.toDataURL({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3H
 
 render a qrcode for the terminal
 ```js
-var QRCode = require('algorand-payment-qr')
+var QRCode = require('algorand-qrcode')
 
 QRCode.toString({type:'terminal',wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, url) {
   console.log(url)
@@ -197,7 +197,7 @@ QRCode.toString({type:'terminal',wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7
 Promises and Async/Await can be used in place of callback function.
 
 ```javascript
-import QRCode from 'algorand-payment-qr'
+import QRCode from 'algorand-qrcode'
 
 // With promises
 QRCode.toDataURL({})
@@ -591,17 +591,17 @@ See [Algorand URI options](#algorand-uri-params).
 ##### `label`
   Type: `String`<br>
 
-  Label of Algorand payment transaction.
+  Label of Algorand transaction.
 
 ##### `asset`
   Type: `String`<br>
 
-  Asset Id of Algorand payment transaction if used. If not specified Algo will be used as payment fungible token.
+  Asset Id of Algorand transaction if used. If not specified , Algo will be used as fungible token.
   
 ##### `note`
   Type: `String`<br>
 
-  note or xnote field content of Algorand payment transaction. The xnote option determines the name of the field with this content to be note or xnote.
+  note or xnote field content of Algorand transaction. The xnote option determines the name of the field with this content to be note or xnote.
 
 
 #### Renderers options
@@ -650,7 +650,7 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 
 
 ## License
-[MIT](https://github.com/emg110/algorand-payment-qr/blob/master/license)
+[MIT](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 
 ## Credits
