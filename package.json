@@ -30,11 +30,12 @@
     "rollup-plugin-terser": "^5.3.0",
     "sinon": "^9.0.2",
     "standard": "^14.3.3",
-    "tap": "^14.10.7"
+    "tap": "^15.0.9"
   },
   "scripts": {
     "pretest": "npm run lint",
     "build": "rollup -c",
+    "qrcode": "node bin/qrcode",
     "prepublish": "npm run build",
     "api": "node examples/api-server.js",
     "static": "node examples/static-server.js"
