@@ -133,11 +133,11 @@ Options:
 
 Examples:
     - Draw in terminal window:
-    node qrcode -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
     - Save as png image:
-    node qrcode -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
     - Use red as foreground color:
-    node qrcode -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
