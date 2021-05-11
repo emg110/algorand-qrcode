@@ -16,7 +16,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Technical notes
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
-- Requires NodeJS version >= 10
+- Requires NodeJS version later than 10.
 
 ## Table of contents
 
