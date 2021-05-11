@@ -102,8 +102,8 @@ Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
 
 Algorand options:
-  -a, --amount Amount (in Micro Algos) of Algorand transaction  [number]
-  -l, --label Label of Algorand transaction                     [string]
+  -a, --amount Amount (in Micro Algos) of Algorand transaction          [number]
+  -l, --label Label of Algorand transaction                             [string]
   -s, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
   -n, --note note/xnote (depends on -a | --xnote switch)                [string]
   -d, --dest Destination Wallet address (Algorand account address)      [string]
