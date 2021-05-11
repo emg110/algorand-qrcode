@@ -35,7 +35,6 @@
   "scripts": {
     "pretest": "npm run lint",
     "build": "rollup -c",
-    "qrcode": "node bin/qrcode",
     "prepublish": "npm run build",
     "api": "node examples/api-server.js",
     "static": "node examples/static-server.js"

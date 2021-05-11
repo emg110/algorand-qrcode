@@ -16,7 +16,9 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Technical notes
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
-- Requires NodeJS version later than 10.
+- Requires NodeJS version later than 10. 
+- Since all the texts for Algorand URI fields are HTML Escaped and then RFC 3986 encoded, for label, note and xnote fields to deliver correct content after getting scanned by Algorand Wallet QR Scanner, either reading of HTML escaped string support should be added to Algorand Wallet QR scanner feature or their team inform this library’s Author to remove the escaping feature from this code base.
+- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
 
 ## Table of contents
 
