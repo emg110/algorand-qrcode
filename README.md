@@ -1,7 +1,7 @@
 [<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.png">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
 
 # Algorand QR Code Generator
-[![npm](https://img.shields.io/static/v1?label=Algorand&message=Review&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-qrcode-generator/)
+[![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 [![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-qrcode)
 [![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
