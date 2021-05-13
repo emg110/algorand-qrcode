@@ -1,6 +1,6 @@
 {
   "name": "algorand-qrcode",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Algorand QR Code generator javascript module",
   "repository": {
     "type": "git",
