@@ -6,10 +6,11 @@
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
-<div style="display:block;text-align:center;">
-<img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 
-<p style="display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
+<div style="display:block; text-align:center;">
+  <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
+
+  <p style="display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 </div>
 
 
