@@ -1,9 +1,9 @@
-[<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.png">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
+[<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.jpeg">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
 
 # Algorand QR Code Generator
-[![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=yellow&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
+[![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 [![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-qrcode)
-[![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
+[![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 <div style="display:block;text-align:center;">
@@ -662,7 +662,8 @@ What defines a GS1 qrcode is a header with metadata that describes your gs1 info
 -  [node-qrcode](https://github.com/soldair/node-qrcode)
 -  [escape-html](https://github.com/component/escape-html)
 -  [encodeurl](https://github.com/pillarjs/encodeurl)
--  The idea for this lib was inspired by: Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
+  
+> The idea for this lib was inspired by: Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 
 
 ## Mentioned Trademarks

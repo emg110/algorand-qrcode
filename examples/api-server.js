@@ -62,12 +62,12 @@ app.get("/generate", function (req, res) {
 });
 
 effectHandlers.node = function (args, cb) {
-  args.src = path.join(__dirname, "images", "node_logo.png");
+  args.src = path.join(__dirname, "images", "node.png");
   this.image(path.join(args, cb));
 };
 
 effectHandlers.npm = function (args, cb) {
-  args.src = path.join(__dirname, "images", "npm_logo.png");
+  args.src = path.join(__dirname, "images", "npm.png");
   this.image(args, cb);
 };
 
@@ -75,161 +75,6 @@ effectHandlers.algorand = function (args, cb) {
   args.src = path.join(__dirname, "images", "algorand_logo_mark_black.png");
   this.image(args, cb);
 };
-
-/* effectHandlers.rounded = function (args, cb) {
-  const canvas = createCanvas(200, 200);
-  QRCode.toCanvas(canvas, args, function (err) {
-    if (err) {
-      cb(err, canvas);
-      return;
-    }
-
-    const tpx = new canvasutil.PixelCore();
-    const luma709Only = canvasutil.conversionLib.luma709Only;
-    const up = [];
-    const down = [];
-    const left = [];
-    const right = [];
-    let upPx;
-    let downPx;
-    let leftPx;
-    let rightPx;
-    let r;
-    let t;
-    let l;
-    let d;
-    let corner = 0;
-
-    tpx.threshold = 100;
-
-    tpx.iterate(canvas, function (px, i, len, pixels, w, h, pixelCore) {
-      corner = 0;
-
-      // is dark
-      if (luma709Only(px.r, px.g, px.b) < pixelCore.threshold) {
-        if (i - w > 0) {
-          upPx = (i - w) * 4;
-          up[0] = pixels[upPx + 0];
-          up[1] = pixels[upPx + 1];
-          up[2] = pixels[upPx + 2];
-          // console.log('up',up);
-        }
-
-        if (i + w <= len) {
-          downPx = (i + w) * 4;
-          down[0] = pixels[downPx + 0];
-          down[1] = pixels[downPx + 1];
-          down[2] = pixels[downPx + 2];
-          // console.log('down',down);
-        }
-
-        // have left pixel but no wrapping
-        if (i % w !== 0) {
-          leftPx = (i - 1) * 4;
-          left[0] = pixels[leftPx + 0];
-          left[1] = pixels[leftPx + 1];
-          left[2] = pixels[leftPx + 2];
-          // console.log('left',left);
-        }
-
-        if (i % w !== w - 1) {
-          rightPx = (i + 1) * 4;
-          right[0] = pixels[rightPx + 0];
-          right[1] = pixels[rightPx + 1];
-          right[2] = pixels[rightPx + 2];
-          // console.log('right',right);
-        }
-
-        r = rightPx ? luma709Only(right[0], right[1], right[2]) : 0;
-        t = upPx ? luma709Only(up[0], up[1], up[2]) : 0;
-        l = leftPx ? luma709Only(left[0], left[1], left[2]) : 0;
-        d = downPx ? luma709Only(down[0], down[1], down[2]) : 0;
-
-        if (l > pixelCore.threshold) {
-          // if left is light and i am dark
-          if (t > pixelCore.threshold) {
-            // if top is light and i am dark
-            corner = 1;
-            pixels[rightPx + 4] = 100;
-          } else if (d > pixelCore.threshold) {
-            // if bottom is light and i am dark
-            pixels[rightPx + 4] = 100;
-            corner = 1;
-          }
-        } else if (r > pixelCore.threshold) {
-          if (t > pixelCore.threshold) {
-            // if top is light and i am dark
-            corner = 1;
-          } else if (d > pixelCore.threshold) {
-            // if bottom is light and i am dark
-            corner = 1;
-          }
-        }
-
-        if (corner) {
-          px.a = 50;
-        }
-      }
-    });
-    cb(null, canvas);
-  });
-}; */
-
-/* effectHandlers.remoteImage = function (args, cb) {
-  let src = args.src;
-  let domain;
-  let uri;
-
-  if (!src) {
-    cb(new Error("src required"), null);
-  } else {
-    if (src.indexof("://") !== -1) {
-      src = src.split("://").unshift();
-      const parts = src.split("/");
-
-      domain = parts.shift();
-      uri = parts.join("/");
-    }
-  }
-
-  if (!domain || !uri) {
-    cb(new Error("missing domain or uri " + args.src));
-    return;
-  }
-
-  const options = {
-    host: domain,
-    port: 80,
-    path: uri,
-    method: "GET",
-  };
-
-  const req = http.request(options, function (res) {
-    if (res.statusCode < 200 || res.statusCode > 299) {
-      cb(new Error("http " + res.statusCode + " response code"), null);
-      return;
-    }
-
-    res.setEncoding("utf8");
-
-    let data = "";
-    res.on("data", function (chunk) {
-      data += chunk;
-      console.log("BODY: " + chunk);
-    });
-
-    res.on("complete", function () {
-      cb(null, data);
-    });
-
-    res.on("error", function (error) {
-      cb(error, null);
-      cb = function () {};
-    });
-  });
-
-  req.end();
-}; */
 
 effectHandlers.image = function (args, cb) {
   loadImage(args.src || "").then(
