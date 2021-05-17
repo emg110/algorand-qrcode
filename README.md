@@ -1,4 +1,4 @@
-[<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.jpeg">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
+[<img title="Algorand QR Code Generator" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
 
 # Algorand QR Code Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
