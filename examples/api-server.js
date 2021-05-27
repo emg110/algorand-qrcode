@@ -14,19 +14,7 @@ const path = require("path");
 app.use(express.static(path.resolve(__dirname, '../examples')))
 
 app.use(favicon(__dirname + '/favicon.ico'));
-app.get("/qrcode.js", (req, res) => {
-  res.set("content-type", "text/javascript");
-  fs.createReadStream(path.join(__dirname, "..", "build", "qrcode.js")).pipe(
-    res
-  );
-});
 
-app.get("/qrcode.tosjis.js", (req, res) => {
-  res.set("content-type", "text/javascript");
-  fs.createReadStream(
-    path.join(__dirname, "..", "build", "qrcode.tosjis.js")
-  ).pipe(res);
-});
 
 app.get("/", function (req, res) {
   fs.readFile(path.join(__dirname, "index.html"), function (err, data) {
@@ -63,11 +51,15 @@ app.get("/generate", function (req, res) {
 
 effectHandlers.node = function (args, cb) {
   args.src = path.join(__dirname, "images", "node.png");
-  this.image(path.join(args, cb));
+  this.image(args, cb);
 };
 
 effectHandlers.npm = function (args, cb) {
   args.src = path.join(__dirname, "images", "npm.png");
+  this.image(args, cb);
+};
+effectHandlers.myalgo = function (args, cb) {
+  args.src = path.join(__dirname, "images", "myalgo.png");
   this.image(args, cb);
 };
 

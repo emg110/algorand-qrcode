@@ -259,7 +259,7 @@ var argv = yargs
     conflicts: 'type',
     group: 'Renderer options:'
   })
-  .option('h', {
+  .option('y',{
     alias: 'html',
     type: 'boolean',
     description: 'Escape HTML on demand',

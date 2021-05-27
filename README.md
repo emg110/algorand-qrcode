@@ -17,7 +17,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version later than 10. 
-- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with -h (in CLI) or having `html: true` in options.
+- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html (in CLI) or having `html: true` in options.
 - This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
 
 ## Table of contents
@@ -47,7 +47,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Highlights
 - This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
 - Supports RFC 3986 and Algorand URI ABNF Grammar.
-- Optionally can automatically escape HTML (`-h or html:true`).
+- Optionally can automatically escape HTML (`--html or html:true`).
 - Validates Algorand fields on client side without js-algorand-sdk (address, amount, asset ID, ...).
 - CLI utility.
 - Save QR code as image (SVG, PNG, JPEG,...).
@@ -103,7 +103,7 @@ Usage: qrcode [options]
 
 Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
-  -h, --html  Automatically HTML escapes all text strings              [boolean]
+  --html  Automatically HTML escapes all text strings              [boolean]
 
 Algorand options:
   -a, --amount Amount (in Micro Algos) of Algorand transaction          [number]
