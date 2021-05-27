@@ -54,16 +54,7 @@ effectHandlers.node = function (args, cb) {
   this.image(args, cb);
 };
 
-effectHandlers.npm = function (args, cb) {
-  args.src = path.join(__dirname, "images", "npm.png");
-  this.image(args, cb);
-};
-effectHandlers.myalgo = function (args, cb) {
-  args.src = path.join(__dirname, "images", "myalgo.png");
-  this.image(args, cb);
-};
-
-effectHandlers.algorand = function (args, cb) {
+effectHandlers.algo = function (args, cb) {
   args.src = path.join(__dirname, "images", "algorand_logo_mark_black.png");
   this.image(args, cb);
 };
