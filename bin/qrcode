@@ -1,10 +1,17 @@
-#!/usr/bin/env node
-var yargs = require('yargs')
-var qr = require('../lib')
-const Utils = require('../lib/renderer/utils')
+var yargs = require('yargs');
+var qr = require('../lib');
+const Utils = require('../lib/renderer/utils');
 
+/**
+ *
+ * @function
+ * @name constructUri
+ * @desc Constructs an Algorand URI from given Algorand spec options
+ * @param {*} options
+ * @return {String}
+ */
 function constructUri (options){
-  let {wallet, xnote, note, label, amount, asset} = options;
+  let {wallet, xnote, note, label, amount, asset, html} = options;
   let alrorandURI = '';
   if(asset){
     if(asset.length===0)asset = null;
@@ -45,14 +52,22 @@ function constructUri (options){
    
   }
 
-  alrorandURI = Utils.escapeHtml(alrorandURI);
+  if(html){alrorandURI = Utils.escapeHtml(alrorandURI)};
   alrorandURI = Utils.encodeUrl(alrorandURI);
   console.log('Generated Algorand URI: ', alrorandURI)
   return alrorandURI;
 }
-
+/**
+ *
+ * @function
+ * @name save
+ * @desc Saves an generated Algorand QR Code into image file
+ * @param {Blob} file
+ * @param {*} options
+ * @return {*}
+ */
 function save (file, options) {
-  qr.toFile(file, options, function (err, data) {
+  return qr.toFile(file, options, function (err, data) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
@@ -62,9 +77,18 @@ function save (file, options) {
   })
 }
 
+/**
+ *
+ * @function
+ * @name print
+ * @desc prints an generated Algorand QR Code into console log
+ * @param {Blob} file
+ * @param {*} options
+ * @return {*}
+ */
 function print (options) {
   options.type = 'terminal'
-  qr.toString(options, function (err, resqr) {
+  return qr.toString(options, function (err, resqr) {
     if (err) {
       console.error('Error:', err.message)
       process.exit(1)
@@ -74,6 +98,14 @@ function print (options) {
   })
 }
 
+/**
+ *
+ * @function
+ * @name parseOptions
+ * @desc Parses and fetches Algorand options from args
+ * @param {Array} args
+ * @return {*}
+ */
 function parseOptions (args) {
   return {
     xnote: args.xnote,
@@ -98,6 +130,14 @@ function parseOptions (args) {
   }
 }
 
+/**
+ *
+ * @function
+ * @name processInputs
+ * @desc Process CLI inputs
+ * @param {Array} opts
+ * @return {*}
+ */
 function processInputs (opts) {
   if (!opts) {
     yargs.showHelp()
@@ -105,12 +145,13 @@ function processInputs (opts) {
   }
 
   if (opts.output) {
-    save(opts.output, parseOptions(opts))
+    return save(opts.output, parseOptions(opts))
   } else {
-    print(parseOptions(opts))
+    return print(parseOptions(opts))
   }
 }
 
+// Instantiation of yargs with configuration to get CLI interaction up and running
 var argv = yargs
   .detectLocale(false)
   .usage('Usage: $0 [options]')
@@ -118,7 +159,7 @@ var argv = yargs
     alias: 'xnote',
     description: 'Algorand URI xnote field',
     group: 'Algorand URI params:',
-    type: 'string'
+    type: 'boolean'
   })
   .option('d', {
     alias: 'dest',
@@ -218,6 +259,12 @@ var argv = yargs
     conflicts: 'type',
     group: 'Renderer options:'
   })
+  .option('h', {
+    alias: 'html',
+    type: 'boolean',
+    description: 'Escape HTML on demand',
+    group: 'Renderer options:'
+  })
   .option('o', {
     alias: 'output',
     description: 'Output file'
@@ -226,10 +273,10 @@ var argv = yargs
   .alias('h', 'help')
   .version()
   .example('$0 -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Draw in terminal window')
-  .example('$0 -o out.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Save as png image')
-  .example('$0 -f F00 -o out.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Use red as foreground color')
+  .example('$0 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Save as png image')
+  .example('$0 -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for QR code generator"', 'Use red as foreground color')
   .parserConfiguration({'parse-numbers': false})
   .argv
-
+// Process of QR Code via command line interface has been started start
 processInputs(argv)
 
