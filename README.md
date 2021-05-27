@@ -579,7 +579,12 @@ See [Algorand URI options](#algorand-uri-params).
   Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.<br>
   If not specified the more suitable value will be calculated.
 
-  
+##### `html`
+  Type: `Boolean`<br>
+
+  Specifies if the text string fields are to be HTML Escaped or not.
+
+
 #### Algorand URI params
 
 ##### `xnote`
