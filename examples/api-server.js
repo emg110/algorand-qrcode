@@ -11,7 +11,7 @@ const path = require("path");
 // app.use(express.methodOverride())
 // app.use(express.bodyParser())
 // app.use(app.router)
-// app.use(express.static(path.resolve(__dirname, '..')))
+app.use(express.static(path.resolve(__dirname, '../examples')))
 
 app.use(favicon(__dirname + '/favicon.ico'));
 app.get("/qrcode.js", (req, res) => {
