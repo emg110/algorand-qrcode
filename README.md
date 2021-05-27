@@ -17,7 +17,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version later than 10. 
-- Since all the texts for Algorand URI fields are HTML Escaped and then RFC 3986 encoded, for label, note and xnote fields to deliver correct content after getting scanned by Algorand Wallet QR Scanner, either reading of HTML escaped string support should be added to Algorand Wallet QR scanner feature or their team inform this library’s Author to remove the escaping feature from this code base.
+- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with -h (in CLI) or having `html: true` in options.
 - This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
 
 ## Table of contents
@@ -46,14 +46,15 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## Highlights
 - This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
-- Supports RFC 3986 and Algorand URI ABNF Grammar
-- Automatically escapes HTML
-- CLI utility
-- Save QR code as image (SVG, PNG, JPEG,...)
-- Support for some styling and colors (dark , light,..)
-- Support for chinese, cyrillic, greek and japanese characters in transaction labels and notes
-- Auto generates optimized segments for best data compression and smallest QR Code size
-- App agnostic readability, Generated QR Codes by definition are app agnostic
+- Supports RFC 3986 and Algorand URI ABNF Grammar.
+- Optionally can automatically escape HTML (`-h or html:true`).
+- Validates Algorand fields on client side without js-algorand-sdk (address, amount, asset ID, ...).
+- CLI utility.
+- Save QR code as image (SVG, PNG, JPEG,...).
+- Support for some styling and colors (dark , light,..).
+- Support for chinese, cyrillic, greek and japanese characters in transaction labels and notes.
+- Auto generates optimized segments for best data compression and smallest QR Code size.
+- App agnostic readability, Generated QR Codes by definition are app agnostic.
 
 ## Algorand URI ABNF Grammar
 
@@ -80,7 +81,7 @@ npm install --save algorand-qrcode
 and then 
 
 ```shell
-cd bin && node qrcode
+cd bin && node qrcode [options]
 ```
 
 or, install it globally to use `qrcode` from the command line to save Algorand URI qrcode and barcode   images or generate ones you can view in your terminal.
@@ -102,6 +103,7 @@ Usage: qrcode [options]
 
 Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
+  -h, --html  Automatically HTML escapes all text strings              [boolean]
 
 Algorand options:
   -a, --amount Amount (in Micro Algos) of Algorand transaction          [number]
