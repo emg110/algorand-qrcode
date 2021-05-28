@@ -12,100 +12,105 @@
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
     }
-
-    html,
-    body {
-      margin: 0;
-      background-color: ghostwhite;
-    }
-
-    input,
-    textarea {
-      font-size: 14px;
-      padding: 2px;
-    }
-
-    textarea {
-      resize: none;
-    }
-
-    .container {
-      display: flex;
-      margin: 0 auto;
-      padding: 16px;
-      justify-content: center;
-    }
-
-    .controls {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      min-width: 400px;
-      max-width: 400px;
-    }
-
-    .qrcode-container {
-      max-width: 50%;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .qrcode-image {
-      border: 1px solid #ccc;
-    }
-
-    .container>*+* {
-      margin-left: 40px;
-    }
-
-    .title {
+    .title{
       text-align: center;
     }
-
-    .control-group {
-      display: flex;
+    
+    input[type=text], select, textarea{
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
     }
 
-    .control-group+.control-group {
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .col-5 {
+      float: left;
+      width: 5%;
+      margin-top: 6px;
+    }
+    .col-13 {
+      float: left;
+      width: 13%;
+      margin-top: 6px;
+      text-align: right;
+      margin-right: 20px;
+    }
+    .col-15 {
+      float: left;
+      width: 15%;
+      /* margin-top: 6px; */
+      text-align: right;
+      margin-right: 20px;
+    }
+    .col-35 {
+      float: left;
+      width: 35%;
+      margin-top: 6px;
+    }
+    .col-25 {
+      float: left;
+      width: 25%;
       margin-top: 16px;
     }
 
-    .control {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
     }
 
-    .control+.control {
-      margin-left: 16px;
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    } 
+    .qrcode-image {
+      border: 1px solid #ccc;
+    }
+    .button-div{
+      text-align: right;
+      margin-top:50px;
+    }
+    .qrcode-div{
+      text-align: center;
+      margin-top:25px;
+    }
+    #generate-button{
+      padding:10px;
+      display: inline-block;
     }
 
-    .control>input {
-      width: 100%;
-    }
-
-    .control>textarea {
-      width: 100%;
-      flex-grow: 1;
-    }
-
-    .expand {
-      flex-grow: 1;
-    }
-
-    .algorand-generated-uri {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      background: black;
-      color: white;
-
-    }
+    
+    @media screen and (max-width: 600px) {
+      .col-5,.col-15, .col-25, .col-35, .col-75 {
+        width: 100%;
+        margin-top: 0;
+        text-align: left;
+      }
+      .col-13 {
+        text-align: left;
+      }
+      .button-div{
+        margin-top: 20px;
+        text-align: center;
+      }
+      .qrcode-div{
+        text-align: center;
+      }
+    }    
   </style>
 </head>
 
@@ -154,124 +159,140 @@
       }
     }
   </style>
-  <h2 class="title">Algorand QR Code generator</h2>
-  <div class="container">
-    <div class="controls">
-      <div class="control-group">
-
-        <div class="control">
-          <label for="wallet">Algorand account address:</label>
-          <input style="min-width:600px" id="wallet" type="text" name="wallet"
-            value="LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" placeholder="Wallet address" />
+  <h2 class="title">Algorand QR Code Generator</h2>
+  <div class="container">      
+        <div class="row">
+          <div class="col-15">
+            <label for="wallet">Algorand account address</label>
+          </div>
+          <div class="col-75">
+            <input
+              class="wallet-input" 
+              id="wallet" 
+              type="text" 
+              name="wallet"
+              value="LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" 
+              placeholder="Wallet address" />      
+          </div>
         </div>
 
-
-
-      </div>
-      <div class="control-group">
-        <div class="control">
-          <label for="label">Label:</label>
-          <input id="label" type="text" name="label" value="emg110@gmail.com" placeholder="Label..." />
-        </div>
-      </div>
-
-      <div class="control-group">
-
-        <div class="control">
-          <label for="amount">Amount:</label>
-          <input id="amount" type="number" name="amount" min="1" value="100" />
+        <div class="row">
+          <div class="col-15">
+            <label for="label">Label</label>
+          </div>
+          <div class="col-75">
+            <input id="label" type="text" name="label" value="emg110@gmail.com" placeholder="Label..." />
+          </div>
         </div>
 
-
-
-      </div>
-      <div class="control-group">
-
-        <div class="control">
-          <label for="asset">Asset ID:</label>
-          <input id="asset" type="number" name="asset" placeholder="Asset ID (Numeric)" />
-        </div>
-        <div class="control">
-          <label for="note">Note:</label>
-          <input id="note" type="text" name="note" placeholder="Note..." value="" />
+        <div class="row">
+          <div class="col-15">
+            <label for="amount">Amount</label>
+          </div>
+          <div class="col-25">
+            <input id="amount" type="number" name="amount" min="1" value="100" />
+          </div>
         </div>
 
-
-      </div>
-      <div class="control-group">
-
-
-        <div class="control">
-          <label for="xnote">XNote:</label>
-          <input id="xnote" type="checkbox" name="xnote" />
+        <div class="row">
+          <div class="col-15">
+            <label for="asset">Asset ID</label>
+          </div>
+          <div class="col-25">
+            <input id="asset" type="number" name="asset" placeholder="Asset ID (Numeric)" />
+          </div>
+          <div class="col-13">
+            <label for="note">Note</label>
+          </div>
+          <div class="col-35">
+            <input id="note" type="text" name="note" placeholder="Note..." value="" />
+          </div>
         </div>
-        <div class="control">
-          <label for="inverse">Inverse:</label>
-          <input id="inverse" type="checkbox" name="inverse" />
+        
+        <div class="row">
+          <div class="col-15">
+            <label for="xnote">XNote</label>
+          </div>
+          <div class="col-25">
+            <input id="xnote" type="checkbox" name="xnote" />
+          </div>
+          <div class="col-13">
+            <label for="inverse">Inverse</label>
+          </div>
+          <div class="col-25">
+            <input id="inverse" type="checkbox" name="inverse" />
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-15">
+            <label for="version">Version</label>
+          </div>
+          <div class="col-75">
+            <select id="version" name="version">
+              <option>Auto</option>
+            </select>
+          </div>
+        </div>
+     
+        <div class="row">
+          <div class="col-15">
+            <label for="margin">Margin</label>
+          </div>
+          <div class="col-25">
+            <input id="margin" type="number" name="margin" min="4" value="4" />
+          </div>
+          <div class="col-13">
+            <label for="errorLevel">Error Correction</label>
+          </div>
+          <div class="col-35">
+            <select id="errorLevel" name="errorLevel">
+              <option>Default (Medium)</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>Quartile</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+     
+        <div class="row">
+          <div class="col-15">
+            <label for="lightColor">Light color</label>
+          </div>
+          <div class="col-25">
+            <input id="lightColor" type="color" name="light" value="#ffffff" />
+          </div>
+          <div class="col-13">
+            <label for="darkColor">Dark color</label>
+          </div>
+          <div class="col-25">
+            <input id="darkColor" type="color" name="dark" value="#000000" />
+          </div>
         </div>
 
-
-      </div>
-      <div class="control-group">
-        <div class="control">
-          <label for="version">Version:</label>
-          <select id="version" name="version">
-            <option>Auto</option>
-          </select>
+        <div class="row">
+          
+          <div class="col-35 button-div">
+            <button id="generate-button">Create Algorand QR Code</button>
+          </div>
+          <div class="col-35 qrcode-div">
+              <p id="error" class="error"></p>
+          
+              <canvas style="border-bottom:10px solid rgb(115, 175, 245); height: 196px;width:196px" id="canvas"
+                class="qrcode-image"></canvas>
+              <div style="min-width:100%;font-size:0.7em;margin:auto;display:block;text-align:center;"
+                class="algorand-uri-container">
+                <div class="control">
+                  <label style="text-align:center;" for="input-algorand-address">Generated Algorand URI:</label>
+                  <p class="algorand-generated-uri" id="algorand-uri-result">algorand://</p>
+                </div>
+              </div>
+          </div>         
         </div>
-      </div>
-
-      <div class="control-group">
-        <div class="control">
-          <label for="margin">Margin:</label>
-          <input id="margin" type="number" name="margin" min="4" value="4" />
-        </div>
-        <div class="control">
-          <label for="errorLevel">Error Correction:</label>
-          <select id="errorLevel" name="errorLevel">
-            <option>Default (Medium)</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>Quartile</option>
-            <option>High</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <div class="control color-control">
-          <label for="lightColor">Light color:</label>
-          <input id="lightColor" type="color" name="light" value="#ffffff" />
-        </div>
-        <div class="control color-control">
-          <label for="darkColor">Dark color:</label>
-          <input id="darkColor" type="color" name="dark" value="#000000" />
-        </div>
-
-      </div>
-
-      </br>
-      <button id="generate-button">Create Algorand QR Code</button>
-      </br>
-
+      
+      
     </div>
-
-    <div class="qrcode-container">
-      <p id="error" class="error"></p>
-
-      <canvas style="padding:10px;border-bottom:10px solid rgb(115, 175, 245)" id="canvas"
-        class="qrcode-image"></canvas>
-      <div style="min-width:100%;font-size:0.7em;margin:auto;display:block;text-align:center;"
-        class="algorand-uri-container">
-        <div class="control">
-          <label style="text-align:center;" for="input-algorand-address">Generated Algorand URI:</label>
-          <p class="algorand-generated-uri" id="algorand-uri-result">algorand://</p>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
 
   <script>
     var errorEl = document.getElementById('error')
