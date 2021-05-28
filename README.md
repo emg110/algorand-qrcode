@@ -109,7 +109,7 @@ Usage: qrcode [options]
 
 Algorand switch:
   -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
-  --html  Automatically HTML escapes all text strings              [boolean]
+  -y, --html  Automatically HTML escapes all text strings              [boolean]
 
 Algorand options:
   -a, --amount Amount (in Micro Algos) of Algorand transaction          [number]
