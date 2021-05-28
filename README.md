@@ -14,10 +14,16 @@ A comprehensive javascript module with a complete set of tools to generate an st
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
 ## Technical notes
+
+- Dear developers please beware to set your **wallet's mode into development mode** and network to **testnet or betanet** before getting started to avoid any unwanted transactions on mainnet which means real transfer of Algo or some assets. So please do as a developer would do.
+  
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
+  
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version later than 10. 
+  
 - HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html (in CLI) or having `html: true` in options.
+  
 - This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
 
 ## Table of contents
@@ -135,11 +141,11 @@ Options:
 
 Examples:
     - Draw in terminal window:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
     - Save as png image:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -o algorandQR.png -a 1 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
     - Use red as foreground color:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o algorandQR.png -a 1000000 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o algorandQR.png -a 1 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
