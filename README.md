@@ -8,10 +8,9 @@
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 
 <div style="display:block; text-align:center;">
-  <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
+  <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/algorand-qrcode-static-server.png">
 </div>
 
-<p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
 ## Technical notes
 
@@ -22,7 +21,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
 - Requires NodeJS version later than 10. 
   
-- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html (in CLI) or having `html: true` in options.
+- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
   
 - This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
 
@@ -45,7 +44,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-qrcode-cli.png" height="auto" width="150">
 <img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-qrcode-api-server.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generation node example" src="./examples/images/algorand-qrcode-static-server.png" height="auto" width="150">
 <img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form.png" height="auto" width="150">
 
 </div>
@@ -53,7 +51,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Highlights
 - This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
 - Supports RFC 3986 and Algorand URI ABNF Grammar.
-- Optionally can automatically escape HTML (`--html or html:true`).
+- Optionally can automatically escape HTML (`--html` in CLI or `{html:true}` in code).
 - Validates Algorand fields on client side without js-algorand-sdk (address, amount, asset ID, ...).
 - CLI utility.
 - Save QR code as image (SVG, PNG, JPEG,...).
