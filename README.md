@@ -11,6 +11,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
   <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/algorand-qrcode-static-server.png">
 </div>
 
+##  [Simple Demo](https://emg110.github.io/algorandqrcode/)
 
 ## Technical notes
 
