@@ -8,7 +8,7 @@
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 
 <div style="display:block; text-align:center; align-items:center; margin:auto">
-  <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
+  <img style="display:block; margin:auto; cursor:pointer; text-align:center; align-items:center;" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 </div>
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
@@ -38,7 +38,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - [Usage](#usage)
 - [Error correction level](#error-correction-level)
 - [API](#api)
-- [GS1 QR Codes](#gs1-qr-codes)
+- [Comming soon](#coming-soon)
 - [Mentioned Trademarks](#mentioned-trademarks)
 - [Credits](#credits)
 - [License](#license)
@@ -660,10 +660,20 @@ Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
 
+## Coming Soon
 
-## GS1 QR Codes
-What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
-(Coming soon...)
+  > GS1 QR Codes : What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
+  
+  > More options: More configuration options on styling.
+  
+  > Kanji QR Code Mode
+
+  > Advanced Masks: Advance masking formulas for practicality and beautification.
+  
+  > QR Code Scanner: Fast and solid QR Code scanner for many type of QR Code.
+  
+  > QR Code Scanner Components: QR Code Scanner HTML Component, React widget and Material-UI configurable CARD components.
+                                     
 
 
 ## License
