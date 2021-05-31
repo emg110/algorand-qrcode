@@ -27,7 +27,8 @@ A comprehensive javascript module with a complete set of tools to generate an st
   
 - HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
   
-- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
+- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as [Algorand official Wallet](https://algorandwallet.com/)QR Scanner feature to match and adopt new features, specification requirements and extensions.
+ 
 
 ## Table of contents
 
