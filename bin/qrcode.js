@@ -114,6 +114,7 @@ function parseOptions (args) {
     label: args.label,
     asset: args.asset,
     note: args.note,
+    html: args.html,
     version: args.qversion,
     errorCorrectionLevel: args.error,
     type: args.type,
