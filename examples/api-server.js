@@ -8,22 +8,24 @@ const { createCanvas, loadImage } = require("canvas");
 const favicon = require('express-favicon');
 const path = require("path");
 
+const effectHandlers = {};
+
 // app.use(express.methodOverride())
 // app.use(express.bodyParser())
 // app.use(app.router)
+
 app.use(express.static(path.resolve(__dirname, '../examples')))
 
 app.use(favicon(__dirname + '/favicon.ico'));
 
-
+// ExpressJS Route on static web content of QR Code generator web form
 app.get("/", function (req, res) {
   fs.readFile(path.join(__dirname, "index.html"), function (err, data) {
     res.send(data ? data.toString() : err);
   });
 });
 
-const effectHandlers = {};
-
+// ExpressJS Route on static web content of QR Code generator web form
 app.get("/generate", function (req, res) {
   const q = req.query || {};
 

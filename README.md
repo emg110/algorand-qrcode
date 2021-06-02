@@ -13,7 +13,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
-##  [Algorand Dev Hour Presentation](https://cutt.ly/mnj1Qmz)
+##  [Algorand Dev Hour Presentation](https://cutt.ly/6nkl4bA)
 
 ##  [Simple Demo](https://emg110.github.io/algorandqrcode/)
 
