@@ -8,7 +8,7 @@ const ico = `data:image/x-icon;base64,AAABAAYAAAAAAAEAIACeCAAAZgAAAICAAAABACAAKA
   // QRCode.QRCodeDraw.color.dark = '#d4d4d4';
   QRCode.toDataURL({wallet: 'LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q',width: 256, label: 'emg110@gmail.com'}, function (err, url) {
     if (err) console.log('error: ' + err)
-    res.end("<!DOCTYPE html/><html><head><title>node-qrcode</title><link rel='shortcut icon' href="+ico+" type='image/x-icon'></head><body><img style='display: block; margin:auto;' src='" + url + "'/><p style='background:black;color:white;font-family:calibri;display: block; margin:auto; width: 100%;text-align:center;'>algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>"+github+"</body></html>")
+    res.end("<!DOCTYPE html/><html><head><title>Algorand QRCode Generator</title><link rel='shortcut icon' href="+ico+" type='image/x-icon'></head><body><img style='display: block; margin:auto;' src='" + url + "'/><p style='background:black;color:white;font-family:calibri;display: block; margin:auto; width: 100%;text-align:center;'>algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>"+github+"</body></html>")
   })
 }
 
