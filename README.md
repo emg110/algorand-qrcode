@@ -2,7 +2,7 @@
 
 # Algorand QR Code Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
-[![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-qrcode)
+[![NPM](https://img.shields.io/npm/v/algorand-qrcode.svg)](https://www.npmjs.com/package/algorand-qrcode) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
@@ -13,9 +13,13 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
-##  [Algorand Dev Hour Presentation](https://cutt.ly/SnkO7Xl)
+###  [Algorand Dev Hour Presentation](https://cutt.ly/SnkO7Xl)
 
-##  [Simple Demo](https://emg110.github.io/algorandqrcode/)
+###  [Simple Demo](https://emg110.github.io/algorandqrcode/)
+
+###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
+
+###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
 
 ## Technical notes
 
