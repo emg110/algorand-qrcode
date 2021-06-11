@@ -13,7 +13,9 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
-###  [Algorand Dev Hour Presentation](https://cutt.ly/SnkO7Xl)
+###  [Algorand Dev Hours Presentation](https://cutt.ly/SnkO7Xl)
+
+###  [Algorand Dev Hours Prsentation Video on YouTube](https://www.youtube.com/watch?v=RzP3y42Lf4o)
 
 ###  [Simple Demo](https://emg110.github.io/algorandqrcode/)
 
@@ -28,6 +30,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
   
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
+  
 - Requires NodeJS version later than 10. 
   
 - HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
