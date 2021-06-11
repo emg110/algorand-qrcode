@@ -32,6 +32,8 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
   
 - Requires NodeJS version later than 10. 
+
+- Automatically checks & detecs out of scope characters and encodes them forcefully.. 
   
 - HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
   
@@ -674,6 +676,8 @@ Color of light module. Value must be in hex format (RGBA).<br>
   > GS1 QR Codes : What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
   
   > More options: More configuration options on styling.
+  
+  > Image printing on QR Code (position, style)
   
   > Kanji QR Code Mode
 
