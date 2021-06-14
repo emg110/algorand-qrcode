@@ -18,8 +18,10 @@ function constructUri (options){
 
   }
   if(amount){
-    if(!(Number(amount)>=0)){
+    if(!(Number(amount)>0)){
       amount = null;
+    }else{
+      amount = Number(!asset ? amount * 1000000 : amount);
     }
     
   }

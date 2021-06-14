@@ -25,6 +25,8 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## Technical notes
 
+- Default amount is considered in **Micro Algos** by default (what ever amount will be multiplied by 1000000 during URI creation andbefore QR Code generation) since version 1.0.0.
+
 - Dear developers please beware to set your **wallet's mode into development mode** and network to **testnet or betanet** before getting started to avoid any unwanted transactions on mainnet which means real transfer of Algo or some assets. So please do as a developer would do.
   
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
