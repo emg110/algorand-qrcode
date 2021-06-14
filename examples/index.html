@@ -14,8 +14,10 @@
     }
     .title{
       text-align: center;
-    }
-    
+    }	
+    body{
+	margin: 0px;
+	}
     input[type=text], select, textarea{
       width: 100%;
       padding: 12px;
@@ -92,6 +94,20 @@
       padding:10px;
       display: inline-block;
     }
+	.App-logo {
+	  height: 80px;
+	}
+
+	.App-header {
+	  background-color: #222;
+	  padding: 20px;
+	  color: white;
+	}
+
+	.App-header .title{
+	  margin-top: 40px;
+	}
+
 
     
     @media screen and (max-width: 600px) {
@@ -159,12 +175,13 @@
       }
     }
   </style>
-  <h2 class="title">Algorand QR Code Generator</h2>
+   <div class="App-header">
+          <img src="./images/logo.png" class="App-logo" alt="Algorand QR Code">
+          <h1>Algorand QR Code</h1>
+          
+        </div>
   <div class="container">      
-        <div class="row">
-          <div class="col-15">
-            <label for="wallet">Algorand account address</label>
-          </div>
+        <div class="row">		
           <div class="col-75">
             <input
               class="wallet-input" 
