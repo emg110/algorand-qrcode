@@ -2,16 +2,26 @@
 
 # Algorand QR Code Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
-[![npm](https://img.shields.io/static/v1?label=npm&message=OK&color=green&style=flat-square)](https://www.npmjs.com/package/algorand-qrcode)
+[![NPM](https://img.shields.io/npm/v/algorand-qrcode.svg)](https://www.npmjs.com/package/algorand-qrcode) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
 A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
 
-<div style="display:block; text-align:center;">
-  <img style="display:block;margin:auto;cursor:pointer" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
+<div style="display:block; text-align:center; align-items:center; margin:auto">
+  <img style="display:block; margin:auto; cursor:pointer; text-align:center; align-items:center;" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 </div>
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
+
+###  [Algorand Dev Hours Presentation](https://cutt.ly/SnkO7Xl)
+
+###  [Algorand Dev Hours Prsentation Video on YouTube](https://www.youtube.com/watch?v=RzP3y42Lf4o)
+
+###  [Simple Demo](https://emg110.github.io/algorandqrcode/)
+
+###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
+
+###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
 
 ## Technical notes
 
@@ -20,11 +30,15 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
   
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
+  
 - Requires NodeJS version later than 10. 
+
+- Automatically checks & detecs out of scope characters and encodes them forcefully.. 
   
-- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html (in CLI) or having `html: true` in options.
+- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
   
-- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as Algorand Wallet QR Scanner feature to match and adopt new features, specification requirements and extensions.
+- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as [Algorand official Wallet](https://algorandwallet.com/)QR Scanner feature to match and adopt new features, specification requirements and extensions.
+ 
 
 ## Table of contents
 
@@ -35,7 +49,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - [Usage](#usage)
 - [Error correction level](#error-correction-level)
 - [API](#api)
-- [GS1 QR Codes](#gs1-qr-codes)
+- [Comming soon](#coming-soon)
 - [Mentioned Trademarks](#mentioned-trademarks)
 - [Credits](#credits)
 - [License](#license)
@@ -45,7 +59,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-qrcode-cli.png" height="auto" width="150">
 <img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-qrcode-api-server.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generation node example" src="./examples/images/algorand-qrcode-static-server.png" height="auto" width="150">
 <img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form.png" height="auto" width="150">
 
 </div>
@@ -53,7 +66,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 ## Highlights
 - This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
 - Supports RFC 3986 and Algorand URI ABNF Grammar.
-- Optionally can automatically escape HTML (`--html or html:true`).
+- Optionally can automatically escape HTML (`--html` in CLI or `{html:true}` in code).
 - Validates Algorand fields on client side without js-algorand-sdk (address, amount, asset ID, ...).
 - CLI utility.
 - Save QR code as image (SVG, PNG, JPEG,...).
@@ -658,10 +671,22 @@ Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
 
+## Coming Soon
 
-## GS1 QR Codes
-What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
-(Coming soon...)
+  > GS1 QR Codes : What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
+  
+  > More options: More configuration options on styling.
+  
+  > Image printing on QR Code (position, style)
+  
+  > Kanji QR Code Mode
+
+  > Advanced Masks: Advance masking formulas for practicality and beautification.
+  
+  > QR Code Scanner: Fast and solid QR Code scanner for many type of QR Code.
+  
+  > QR Code Scanner Components: QR Code Scanner HTML Component, React widget and Material-UI configurable CARD components.
+                                     
 
 
 ## License

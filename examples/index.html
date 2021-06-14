@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>client side test for node-qrcode</title>
+  <title>Algorand QRCode</title>
   <script src="js/qrcode.js"></script> <!-- This doesn't exist in the examples, Build the project before use. -->
   <script src="js/qrcode.tosjis.js"></script> <!-- This doesn't exist in the examples, Build the project before use. -->
   <style>
@@ -207,7 +207,7 @@
             <label for="amount">Amount</label>
           </div>
           <div class="col-25">
-            <input id="amount" type="number" name="amount" min="1" value="100" />
+            <input id="amount" type="number" name="amount" min="1" value="0" />
           </div>
         </div>
 
@@ -222,7 +222,7 @@
             <label for="note">Note</label>
           </div>
           <div class="col-35">
-            <input id="note" type="text" name="note" placeholder="Note..." value="" />
+            <input id="note" type="text" name="note" placeholder="Note..." value="I have set my network into TESTNET!" />
           </div>
         </div>
         
@@ -345,6 +345,7 @@
         amount: amountEl.value,
         note: noteEl.value,
         xnote: xnoteEl.checked,
+        html: false,
         label: labelEl.value,
         asset: assetEl.value,
         inverse: inverseEl.checked,
