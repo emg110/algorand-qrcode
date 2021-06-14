@@ -92,7 +92,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
     note            = "note=" *qchar
 ```
 
-
 ## Installation
 Inside your project folder do:
 
