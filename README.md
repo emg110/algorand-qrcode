@@ -1,4 +1,4 @@
-[<img title="Algorand QR Code Generator (Banner art by Stasya Tikhonova, curtsey of Algorand)" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/)
+[<img title="Algorand QR Code Generator (Banner art by Stasya Tikhonova, curtsey of Algorand)" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
 # Algorand QR Code Generator
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
@@ -29,7 +29,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 - Dear developers please beware to set your **wallet's mode into development mode** and network to **testnet or betanet** before getting started to avoid any unwanted transactions on mainnet which means real transfer of Algo or some assets. So please do as a developer would do.
   
-- Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qrcode-generator-javascript/).
+- Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/).
   
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
   
