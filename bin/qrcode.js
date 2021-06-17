@@ -275,9 +275,9 @@ var argv = yargs
   .help('h')
   .alias('h', 'help')
   .version()
-  .example('$0 -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1000000 -n "This is a test transaction for QR code generator"', 'Draw Algorand Payment QR in terminal window')
-  .example('$0 -o algorandQR.png -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -l "Coffee"', 'Save Algorand contact label as png image')
-  .example('$0 -f F00 -o algorandQR.png -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1000000 -s 45 -n "This is a test USDT transfer for QR code generator"', 'Use red as foreground color')
+  .example('$0 -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 1000000 -n "This is a test transaction for QR code generator"', 'Draw Algorand Payment QR in terminal window')
+  .example('$0 -o algorandQR.png -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "Coffee"', 'Save Algorand contact label as png image')
+  .example('$0 -f F00 -o algorandQR.png -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 1000000 -s 45 -n "This is a test USDT transfer for QR code generator"', 'Use red as foreground color')
   .parserConfiguration({'parse-numbers': false})
   .argv
 // Process of QR Code via command line interface has been started start

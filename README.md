@@ -11,7 +11,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
   <img style="display:block; margin:auto; cursor:pointer; text-align:center; align-items:center;" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 </div>
 
-<p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
+<p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI?label=emg110@gmail.com</p>
 
 ###  [Simple Web Form Demo](https://emg110.github.io/algorandqrcode/)
 
@@ -160,13 +160,13 @@ Options:
 
 Examples:
     - Draw Algorand USDT(Tether) payment transaction QR Code in terminal window:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 25 -s 45 -n "This is an Algorand USDT Tether payment transaction QR Code" -p
+    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 25 -s 45 -n "This is an Algorand USDT Tether payment transaction QR Code" -p
 
     - Save Algorand contact label as png image:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -l "emg110@gmail.com" -o emg110ContactQrCode.png 
+    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o emg110ContactQrCode.png 
 
     - Use red as foreground color:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o paymentQR.png -a 12 -x -n "This is an Algorand Algo payment transaction QR Code"
+    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -f F00 -o paymentQR.png -a 12 -x -n "This is an Algorand Algo payment transaction QR Code"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
@@ -181,7 +181,7 @@ Recognized extensions are `png`, `svg` and `txt`.
 var QRCode = require('algorand-qrcode')
 var canvas = document.getElementById('canvas')
 
-QRCode.toCanvas(canvas, {wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (error) {
+QRCode.toCanvas(canvas, {wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (error) {
   if (error) console.error(error)
   console.log('success!');
 })
@@ -193,7 +193,7 @@ QRCode.toCanvas(canvas, {wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETK
 
 <script src="/build/qrcode.js"></script>
 <script>
-  QRCode.toCanvas(document.getElementById('canvas'), {wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (error) {
+  QRCode.toCanvas(document.getElementById('canvas'), {wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (error) {
     if (error) console.error(error)
     console.log('success!');
   })
@@ -210,7 +210,7 @@ Require the module `algorand-qrcode`
 ```javascript
 var QRCode = require('algorand-qrcode')
 
-QRCode.toDataURL({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, url) {
+QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, url) {
   console.log(url)
 })
 ```
@@ -219,7 +219,7 @@ render a qrcode for the terminal
 ```js
 var QRCode = require('algorand-qrcode')
 
-QRCode.toString({type:'terminal',wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, url) {
+QRCode.toString({type:'terminal',wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, url) {
   console.log(url)
 })
 ```
@@ -242,7 +242,7 @@ QRCode.toDataURL({})
 // With async/await
 const generateQR = async text => {
   try {
-    console.log(await QRCode.toDataURL({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}))
+    console.log(await QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}))
   } catch (err) {
     console.error(err)
   }
@@ -272,7 +272,7 @@ Error level can be set through `options.errorCorrectionLevel` property.<br>
 If not specified, the default value is `M`.
 
 ```javascript
-QRCode.toDataURL({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com", errorCorrectionLevel: 'H'}, function (err, url) {
+QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com", errorCorrectionLevel: 'H'}, function (err, url) {
   console.log(url)
 })
 ```
@@ -340,7 +340,7 @@ Callback function called on finish.
 
 ##### Example
 ```javascript
-QRCode.toCanvas({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, canvas) {
+QRCode.toCanvas({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, canvas) {
   if (err) throw err
 
   var container = document.getElementById('container')
@@ -386,7 +386,7 @@ Callback function called on finish.
 ##### Example
 ```javascript
 var opts = {
-  wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q",
+  wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
   label:"emg110@gmail.com",
   errorCorrectionLevel: 'H',
   type: 'image/jpeg',
@@ -431,7 +431,7 @@ Callback function called on finish.
 
 ##### Example
 ```javascript
-QRCode.toString({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com"}, function (err, string) {
+QRCode.toString({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, string) {
   if (err) throw err
   console.log(string)
 })
@@ -503,7 +503,7 @@ Callback function called on finish.
 
 ##### Example
 ```javascript
-QRCode.toString({wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q", label:"emg110@gmail.com", type: 'utf8'}, function (err, string) {
+QRCode.toString({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com", type: 'utf8'}, function (err, string) {
   if (err) throw err
   console.log(string)
 })
@@ -554,7 +554,7 @@ Callback function called on finish.
 ##### Example
 ```javascript
 QRCode.toFile('path/to/filename.png', {
-  wallet:"LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q",
+  wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
   label:"emg110@gmail.com",
   color: {
     dark: '#00F',  // Blue dots

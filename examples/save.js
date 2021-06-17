@@ -2,7 +2,7 @@ const QRCode = require('../lib')
 
 const path = './tmp.png'
 QRCode.toFile(path, {
-  wallet: 'LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q',
+  wallet: 'AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI',
   width: 256,
    label: 'emg110',
   color: {

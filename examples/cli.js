@@ -1,6 +1,6 @@
 const QRCode = require('../lib')
 
-QRCode.toString({wallet: 'LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q',width: 256, label: 'emg110@gmail.com'}, function (error, data) {
+QRCode.toString({wallet: 'AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI',width: 256, label: 'emg110@gmail.com'}, function (error, data) {
   if (error) {
     throw new Error(error)
   }
