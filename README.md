@@ -543,7 +543,6 @@ Path where to save the file.
 
   Compression strategy for deflate.
 
-See [All Options](#all-options).<br>
 See [Algorand URI options](#algorand-uri-params).
 
 ##### `cb`
@@ -592,6 +591,11 @@ See [Algorand URI options](#algorand-uri-params).
 
   QR Code version. If not specified the more suitable value will be calculated.
     
+##### `rawUri`
+  Type: `String`<br>
+
+  Allows a raw URI to be parsed with wallet, xnote, note, label, amount, asset, html and others other
+  
 ##### `errorCorrectionLevel`
   Type: `String`<br>
   Default: `M`
