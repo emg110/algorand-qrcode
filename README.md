@@ -13,15 +13,21 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q?label=emg110@gmail.com</p>
 
+###  [Simple Web Form Demo](https://emg110.github.io/algorandqrcode/)
+
+###  [Algorand Developers Portal publication](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
+
 ###  [Algorand Dev Hours Presentation](https://cutt.ly/SnkO7Xl)
 
-###  [Algorand Dev Hours Prsentation Video on YouTube](https://www.youtube.com/watch?v=RzP3y42Lf4o)
+###  [Algorand Dev Hours Presentation Video on YouTube](https://www.youtube.com/watch?v=RzP3y42Lf4o)
 
-###  [Simple Demo](https://emg110.github.io/algorandqrcode/)
+
+## News
 
 ###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
 
 ###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
+
 
 ## Technical notes
 
@@ -29,7 +35,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 - Dear developers please beware to set your **wallet's mode into development mode** and network to **testnet or betanet** before getting started to avoid any unwanted transactions on mainnet which means real transfer of Algo or some assets. So please do as a developer would do.
   
-- Algorand developers portal publication: [Algorand QR Code generator](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/).
   
 - Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
   
@@ -154,12 +159,14 @@ Options:
   --version     Show version number                                    [boolean]
 
 Examples:
-    - Draw in terminal window:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 1 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator" -p
-    - Save as png image:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -o algorandQR.png -a 1 -l "Coffee" -s 45 -n "This is a test transaction for Algorand QR Code generator"
+    - Draw Algorand USDT(Tether) payment transaction QR Code in terminal window:
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -a 25 -s 45 -n "This is an Algorand USDT Tether payment transaction QR Code" -p
+
+    - Save Algorand contact label as png image:
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -l "emg110@gmail.com" -o emg110ContactQrCode.png 
+
     - Use red as foreground color:
-    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o algorandQR.png -a 1 -l "Coffee" -s 45 -x -n "This is a test transaction for Algorand QR Code generator"
+    node qrcode -d "LP6QRRBRDTDSP4HF7CSPWJV4AG4QWE437OYHGW7K5Y7DETKCSK5H3HCA7Q" -f F00 -o paymentQR.png -a 12 -x -n "This is an Algorand Algo payment transaction QR Code"
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
