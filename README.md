@@ -15,7 +15,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ###  [Simple Web Form Demo](https://emg110.github.io/algorandqrcode/)
 
-###  [Algorand Developers Portal publication](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
+###  [Algorand Developers Portal Publication](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
 ###  [Algorand Dev Hours Presentation](https://cutt.ly/SnkO7Xl)
 
