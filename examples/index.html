@@ -12,13 +12,18 @@
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
     }
-    .title{
+
+    .title {
       text-align: center;
-    }	
-    body{
-	margin: 0px;
-	}
-    input[type=text], select, textarea{
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    input[type=text],
+    select,
+    textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
@@ -38,11 +43,13 @@
       background-color: #f2f2f2;
       padding: 20px;
     }
+
     .col-5 {
       float: left;
       width: 5%;
       margin-top: 6px;
     }
+
     .col-13 {
       float: left;
       width: 13%;
@@ -50,6 +57,7 @@
       text-align: right;
       margin-right: 20px;
     }
+
     .col-15 {
       float: left;
       width: 15%;
@@ -57,11 +65,13 @@
       text-align: right;
       margin-right: 20px;
     }
+
     .col-35 {
       float: left;
       width: 35%;
       margin-top: 6px;
     }
+
     .col-25 {
       float: left;
       width: 25%;
@@ -78,55 +88,77 @@
       content: "";
       display: table;
       clear: both;
-    } 
+    }
+
     .qrcode-image {
       border: 1px solid #ccc;
     }
-    .button-div{
+
+    .button-div {
       text-align: right;
-      margin-top:50px;
+      margin-top: 50px;
     }
-    .qrcode-div{
+
+    .qrcode-div {
       text-align: center;
-      margin-top:25px;
+      margin-top: 25px;
     }
-    #generate-button{
-      padding:10px;
+
+    #generate-button {
+      padding: 10px;
       display: inline-block;
     }
-	.App-logo {
-	  height: 80px;
-	}
 
-	.App-header {
-	  background-color: #222;
-	  padding: 20px;
-	  color: white;
-	}
+    #clear-logo-button {
+      padding: 10px;
+      display: inline-block;
+    }
 
-	.App-header .title{
-	  margin-top: 40px;
-	}
+    .App-logo {
+      height: 80px;
+    }
+
+    .App-header {
+      background-color: #222;
+      padding: 20px;
+      color: white;
+    }
+
+    .App-header .title {
+      margin-top: 40px;
+    }
 
 
-    
+
     @media screen and (max-width: 600px) {
-      .col-5,.col-15, .col-25, .col-35, .col-75 {
+
+      .col-5,
+      .col-15,
+      .col-25,
+      .col-35,
+      .col-75 {
         width: 100%;
         margin-top: 0;
         text-align: left;
+        vertical-align: middle;
       }
+
       .col-13 {
         text-align: left;
+        vertical-align: middle;
       }
-      .button-div{
+
+      .button-div {
         margin-top: 20px;
         text-align: center;
+        vertical-align: middle;
       }
-      .qrcode-div{
+
+      .qrcode-div {
         text-align: center;
+        vertical-align: middle;
       }
-    }    
+    }
   </style>
 </head>
 
@@ -175,144 +207,203 @@
       }
     }
   </style>
-   <div class="App-header">
-          <img src="./images/logo.png" class="App-logo" alt="Algorand QR Code">
-          <h1>Algorand QR Code <h4>simple web demo</h4></h1>
-          
-        </div>
-  <div class="container">      
-        <div class="row">		
-		<div class="col-15">
-            <label for="label">Address</label>
-          </div>
-          <div class="col-75">
-            <input
-              class="wallet-input" 
-              id="wallet" 
-              type="text" 
-              name="wallet"
-              value="AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" 
-              placeholder="Wallet address" />      
-          </div>
-        </div>
+  <div class="App-header">
+    <img src="./images/logo.png" class="App-logo" alt="Algorand QR Code">
+    <h1>Algorand QR Code <h4>simple web demo</h4>
+    </h1>
 
-        <div class="row">
-          <div class="col-15">
-            <label for="label">Label</label>
-          </div>
-          <div class="col-75">
-            <input id="label" type="text" name="label" value="emg110@gmail.com" placeholder="Label..." />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-15">
-            <label for="amount">Amount</label>
-          </div>
-          <div class="col-25">
-            <input id="amount" type="number" name="amount" min="1" value="0" />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-15">
-            <label for="asset">Asset ID</label>
-          </div>
-          <div class="col-25">
-            <input id="asset" type="number" name="asset" placeholder="Asset ID (Numeric)" />
-          </div>
-          <div class="col-13">
-            <label for="note">Note</label>
-          </div>
-          <div class="col-35">
-            <input id="note" type="text" name="note" placeholder="Note..." value="I have set my network into TESTNET!" />
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-15">
-            <label for="xnote">XNote</label>
-          </div>
-          <div class="col-25">
-            <input id="xnote" type="checkbox" name="xnote" />
-          </div>
-          <div class="col-13">
-            <label for="inverse">Inverse</label>
-          </div>
-          <div class="col-25">
-            <input id="inverse" type="checkbox" name="inverse" />
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-15">
-            <label for="version">Version</label>
-          </div>
-          <div class="col-75">
-            <select id="version" name="version">
-              <option>Auto</option>
-            </select>
-          </div>
-        </div>
-     
-        <div class="row">
-          <div class="col-15">
-            <label for="margin">Margin</label>
-          </div>
-          <div class="col-25">
-            <input id="margin" type="number" name="margin" min="4" value="4" />
-          </div>
-          <div class="col-13">
-            <label for="errorLevel">Error Correction</label>
-          </div>
-          <div class="col-35">
-            <select id="errorLevel" name="errorLevel">
-              <option>Default (Medium)</option>
-              <option>Low</option>
-              <option>Medium</option>
-              <option>Quartile</option>
-              <option>High</option>
-            </select>
-          </div>
-        </div>
-     
-        <div class="row">
-          <div class="col-15">
-            <label for="lightColor">Light color</label>
-          </div>
-          <div class="col-25">
-            <input id="lightColor" type="color" name="light" value="#ffffff" />
-          </div>
-          <div class="col-13">
-            <label for="darkColor">Dark color</label>
-          </div>
-          <div class="col-25">
-            <input id="darkColor" type="color" name="dark" value="#000000" />
-          </div>
-        </div>
-
-        <div class="row">
-          
-          <div class="col-35 button-div">
-            <button id="generate-button">Create Algorand QR Code</button>
-          </div>
-          <div class="col-35 qrcode-div">
-              <p id="error" class="error"></p>
-          
-              <canvas style="border-bottom:10px solid rgb(115, 175, 245); height: 196px;width:196px" id="canvas"
-                class="qrcode-image"></canvas>
-              <div style="min-width:100%;font-size:0.7em;margin:auto;display:block;text-align:center;"
-                class="algorand-uri-container">
-                <div class="control">
-                  <label style="text-align:center;" for="input-algorand-address">Generated Algorand URI:</label>
-                  <p class="algorand-generated-uri" id="algorand-uri-result">algorand://</p>
-                </div>
-              </div>
-          </div>         
-        </div>
-      
-      
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-15">
+        <label for="label">Address</label>
+      </div>
+      <div class="col-75">
+        <input class="wallet-input" id="wallet" type="text" name="wallet"
+          value="AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" placeholder="Wallet address" />
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-15">
+        <label for="label">Label</label>
+      </div>
+      <div class="col-75">
+        <input id="label" type="text" name="label" value="emg110@gmail.com" placeholder="Label..." />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-15">
+        <label for="amount">Amount</label>
+      </div>
+      <div class="col-25">
+        <input id="amount" type="number" name="amount" min="1" value="0" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-15">
+        <label for="asset">Asset ID</label>
+      </div>
+      <div class="col-25">
+        <input id="asset" type="number" name="asset" placeholder="Asset ID (Numeric)" />
+      </div>
+      <div class="col-13">
+        <label for="note">Note</label>
+      </div>
+      <div class="col-35">
+        <input id="note" type="text" name="note" placeholder="Note..." value="I have set my network into TESTNET!" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-15">
+        <label for="xnote">XNote</label>
+      </div>
+      <div class="col-25">
+        <input id="xnote" type="checkbox" name="xnote" />
+      </div>
+      <div class="col-13">
+        <label for="inverse">Inverse</label>
+      </div>
+      <div class="col-25">
+        <input id="inverse" type="checkbox" name="inverse" />
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-15">
+        <label for="version">Version</label>
+      </div>
+      <div class="col-75">
+        <select id="version" name="version">
+          <option>Auto</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">      
+      <div class="col-15">
+        <label for="errorLevel">Error Correction</label>
+      </div>
+      <div class="col-75">
+        <select id="errorLevel" name="errorLevel">
+          <option>Default (Medium)</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>Quartile</option>
+          <option>High</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">      
+      <div class="col-15">
+        <label for="margin">Margin</label>
+      </div>
+      <div class="col-25">
+        <input id="margin" type="number" name="margin" min="4" value="4" />
+      </div>
+      <div class="col-15">
+        <label for="logoSize">Center Logo Size (16-64)</label>
+      </div>
+      <div class="col-25">
+        <input id="logo-size" type="number" name="logoSize" min="16" value="32" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-15">
+        <label for="lightColor">Light color</label>
+      </div>
+      <div class="col-25">
+        <input id="lightColor" type="color" name="light" value="#ffffff" />
+      </div>
+      <div class="col-13">
+        <label for="darkColor">Dark color</label>
+      </div>
+      <div class="col-25">
+        <input id="darkColor" type="color" name="dark" value="#000000" />
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-15">
+        <label for="withBgLogo">With Background Logo</label>
+      </div>
+      <div class="col-25">
+        <input id="with-bg-logo" type="checkbox" name="withBgLogo" />
+      </div>
+      <div class="col-13">
+        <label for="withLogo">With centered Logo</label>
+      </div>
+      <div class="col-25">
+        <input id="with-centered-logo" type="checkbox" name="withLogo" />
+      </div>
+    </div>
+    <div id="logoBgImageRow" class="row">
+      <div class="col-15">
+        <label for="logoBgImage">QR Code Background Image</label>
+      </div>
+      <div class="col-25">
+        <input id="logoBgImage" type="file" onchange="previewFileBg()">
+
+      </div>
+      <div class="col-13">
+        <label for="logoBgImagePreview">Background Image Preview</label>
+      </div>
+      <div class="col-25">
+        <img id="logoBgImagePreview" src="./images/no-image.jpg" width="100" alt="Image preview...">
+
+      </div>
+
+
+    </div>
+    <div id="logoImageRow" class="row">
+      <div class="col-15">
+        <label for="logoImage">QR Code center Image</label>
+      </div>
+      <div class="col-25">
+        <input id="logoImage" type="file" onchange="previewFile()">
+
+      </div>
+      <div class="col-13">
+        <label for="logoImagePreview">Center Image Preview</label>
+      </div>
+      <div class="col-25">
+        <img id="logoImagePreview" src="./images/no-image.jpg" width="100" alt="Image preview...">
+
+      </div>
+
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-35 button-div">
+        <button id="generate-button">Create Algorand QR Code</button>
+        <button id="clear-logo-button">Clear Logo Images</button>
+      </div>
+      <div class="col-35 qrcode-div">
+        <p id="error" class="error"></p>
+
+        <canvas style="border-bottom:10px solid rgb(115, 175, 245); height: 196px;width:196px" id="canvas"
+          class="qrcode-image"></canvas>
+        <div style="min-width:100%;font-size:0.7em;margin:auto;display:block;text-align:center;"
+          class="algorand-uri-container">
+          <div class="control">
+            <label style="text-align:center;" for="input-algorand-address">Generated Algorand URI:</label>
+            <p class="algorand-generated-uri" id="algorand-uri-result">algorand://</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 
   <script>
     var errorEl = document.getElementById('error')
@@ -331,12 +422,70 @@
     var inverseEl = document.getElementById('inverse')
     var assetEl = document.getElementById('asset')
 
+    var withLogoEl = document.getElementById('with-centered-logo')
+    var logoImageEl = document.getElementById('logoImage')
+    var logoImagePreviewEl = document.getElementById('logoImagePreview')
+
+    var withBgLogoEl = document.getElementById('with-bg-logo')
+    var logoBgImageEl = document.getElementById('logoBgImage')
+    var logoBgImagePreviewEl = document.getElementById('logoBgImagePreview')
+
+
+    var logoBgImageRow = document.getElementById('logoBgImageRow')
+    var logoImageRow = document.getElementById('logoImageRow')
+
+
+
+    var clearButton = document.getElementById('clear-logo-button')
+    var readerResultsBg = null;
+    var readerResults = null;
+
     var generateButton = document.getElementById('generate-button')
+    var logoSizeEl = document.getElementById('logo-size')
+
+    function previewFileBg() {
+
+      const fileBg = logoBgImageEl.files[0];
+      const readerBg = new FileReader();
+
+      readerBg.addEventListener("load", function () {
+
+        readerResultsBg = readerBg.result;
+        logoBgImagePreviewEl.src = readerBg.result;
+      }, false);
+      if (fileBg) {
+        readerBg.readAsDataURL(fileBg);
+      }
+    }
+    function previewFile() {
+
+      const file = logoImageEl.files[0];
+      const reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+
+        readerResults = reader.result;
+        logoImagePreviewEl.src = reader.result;
+      }, false);
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+    function clearLogo() {
+
+      logoImageEl.value = '';
+      logoBgImageEl.value = '';
+      readerResults = null;
+      readerResultsBg = null;
+      logoBgImagePreviewEl.src = "./images/no-image.jpg";
+      logoImagePreviewEl.src = "./images/no-image.jpg";
+
+    }
     /**
      *
      *
      * @function
-     * @name toCanvas
+     * @name drawQR
      * @desc The drawQR function is called to render QR Code with canvas and based on configuration params via HTML form.
      */
     function drawQR() {
@@ -348,6 +497,11 @@
         amount: amountEl.value,
         note: noteEl.value,
         xnote: xnoteEl.checked,
+        withBgLogo: withBgLogoEl.checked,
+        withLogo: withLogoEl.checked,
+        bgLogo: withBgLogoEl.checked ? readerResultsBg : null,
+        logo: withLogoEl.checked ? readerResults : null,
+        logoSize: logoSizeEl.value,
         html: false,
         label: labelEl.value,
         asset: assetEl.value,
@@ -361,11 +515,6 @@
         },
         toSJISFunc: QRCode.toSJIS
       }
-      //TODO: Re-Implement selective modes
-      /* var mode = modeEl.options[modeEl.selectedIndex].text
-       if (mode !== 'Auto') {
-        options.mode = mode;
-      }  */
 
       options.mode = 'Auto';
       /**
@@ -397,8 +546,40 @@
 
     //Listens for Generate button click
     generateButton.addEventListener('click', drawQR, false)
+    clearButton.addEventListener('click', clearLogo, false)
+    logoImageRow.hidden = true
+    logoBgImageRow.hidden = true
+    clearButton.style.display = 'none'
+    logoSizeEl.disabled = true
+    
+    withBgLogoEl.addEventListener('change', function () {
+      if (this.checked) {
+        logoBgImageRow.hidden = false
+        clearButton.style.display = 'inline-block'
+        logoSizeEl.disabled = true
 
-    //Loops the version options and makes string values for version select
+      } else {
+        logoBgImageRow.hidden = true
+        clearButton.style.display = 'none'
+        
+
+      }
+    });
+    withLogoEl.addEventListener('change', function () {
+      if (this.checked) {
+        logoImageRow.hidden = false
+        clearButton.style.display = 'inline-block'
+        logoSizeEl.disabled = false
+
+      } else {
+        logoImageRow.hidden = true
+        clearButton.style.display = 'none'
+        logoSizeEl.disabled = true
+
+      }
+    });
+
+    
     for (var i = 1; i <= 40; i++) {
       versionEl.options[versionEl.options.length] = new Option(i.toString(), i)
     }
