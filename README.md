@@ -13,7 +13,12 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 <p style="text-align:center; display:block; background-color:#4fcdf0; font-size:0.7em">algorand://AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI?label=emg110@gmail.com</p>
 
+## Demo
+
 ###  [Simple Web Form Demo](https://emg110.github.io/algorandqrcode/)
+###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
+
+## Links
 
 ###  [Algorand Developers Portal Publication](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
@@ -24,9 +29,13 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## News
 
-###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
+> ###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
 
-###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
+> ### Background Image added with options (withBgLogo & bgLogo)
+
+> ### Center Image logo added with options (withLogo & logo)
+
+> ### QR Code Scanner has been added (thanks to [JSQR ES6](https://www.npmjs.com/package/jsqr-es6))
 
 
 ## Technical notes
@@ -65,8 +74,11 @@ A comprehensive javascript module with a complete set of tools to generate an st
 <div style="display:block">
 
 <img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-qrcode-cli.png" height="auto" width="150">
+
+<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form2.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generator with centered logo" src="./examples/images/algorand-qrcode-web-form3.png" height="auto" width="150">
+<img style="display:inline-block;cursor:pointer" title="QR Generator with background logo" src="./examples/images/algorand-qrcode-web-form4.png" height="auto" width="150">
 <img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-qrcode-api-server.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form.png" height="auto" width="150">
 
 </div>
 
@@ -283,6 +295,9 @@ Browser:
 - [toCanvas()](#tocanvascanvaselement-text-options-cberror)
 - [toDataURL()](#todataurltext-options-cberror-url)
 - [toString()](#tostringtext-options-cberror-string)
+- [jsQr{}](#createtext-options)
+- [escapeHtml()](#createtext-options)
+- [encodeUrl()](#createtext-options)
 
 Server:
 - [create()](#createtext-options)
@@ -291,6 +306,8 @@ Server:
 - [toString()](#tostringtext-options-cberror-string-1)
 - [toFile()](#tofilepath-text-options-cberror)
 - [toFileStream()](#tofilestreamstream-text-options)
+- [escapeHtml()](#createtext-options)
+- [encodeUrl()](#createtext-options)
 
 ### Browser API
 #### `create([options])`
@@ -611,8 +628,36 @@ See [Algorand URI options](#algorand-uri-params).
 
   Specifies if the text string fields are to be HTML Escaped or not.
 
+##### `withBgLogo`
+  Type: `Boolean`<br>
+
+  Specifies if the QR Code should use an image (passed as bgLogo option) as background image.
+
+##### `withBg`
+  Type: `Boolean`<br>
+
+  Specifies if the QR Code should use an image (passed as bgLogo option) as centered logo image with specified size (logoSize option).
+##### `bgLogo`
+  Type: `String`<br>
+
+  Base 64 DataURL string of background image.
+##### `logo`
+  Type: `String`<br>
+
+  Base 64 DataURL string of centered image.
+
+##### `logoSize`
+  Type: `Number`<br>
+
+  Specifies size of centered logo image if the boolean option withLogo is set as TRUE
+  
 
 #### Algorand URI params
+
+##### `wallet`
+  Type: `String`<br>
+
+  Wallet address for Algorand transaction.
 
 ##### `xnote`
   Type: `Boolean`<br>
@@ -678,6 +723,7 @@ Type: `String`<br>
 Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
+
 
 ## Coming Soon
 
