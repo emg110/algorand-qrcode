@@ -1,64 +1,6 @@
 var yargs = require('yargs');
 var qr = require('../lib');
-const Utils = require('../lib/renderer/utils');
 
-/**
- *
- * @function
- * @name constructUri
- * @desc Constructs an Algorand URI from given Algorand spec options
- * @param {*} options
- * @return {String}
- */
-function constructUri (options){
-  let {wallet, xnote, note, label, amount, asset, html} = options;
-  let alrorandURI = '';
-  if(asset){
-    if(asset.length===0)asset = null;
-
-  }
-  if(amount){
-    if(!(Number(amount)>0)){
-      amount = null;
-    }else{
-      amount = Number(!asset ? amount * 1000000 : amount);
-    }
-    
-  }
-  if(label){
-    if(label.length === 0){
-      label = null;
-    }
-    
-  }
-  if(!note){
-    note = ''
-  }
-  if(!xnote){
-    xnote = false
-  }
-//alrorandURI = `algorand://${wallet}?${label ? 'label='+label : ''}${amount ? '&amount='+amount : ''}${asset ? '&asset='+asset : ''}${xnote ? '&xnote='+note : '&note='+note}`
-  
-  if(!amount && label){
-    alrorandURI = `algorand://${wallet}?label=${label}`
-    
-    
-  }else if(!label && asset && amount){
-    alrorandURI = `algorand://${wallet}?amount=${amount}&asset=${asset}${xnote ? '&xnote='+note : '&note='+note}`
-    
-  }else if(label && !asset && amount){
-    alrorandURI = `algorand://${wallet}?amount=${amount}&label=${label}${xnote ? '&xnote='+note : '&note='+note}`
-   
-  }else if(label && asset && amount){
-    alrorandURI = `algorand://${wallet}?amount=${amount}&asset=${asset}&label=${label}${xnote ? '&xnote='+note : '&note='+note}`
-   
-  }
-
-  if(html){alrorandURI = Utils.escapeHtml(alrorandURI)};
-  alrorandURI = Utils.encodeUrl(alrorandURI);
-  console.log('Generated Algorand URI: ', alrorandURI)
-  return alrorandURI;
-}
 /**
  *
  * @function
@@ -90,6 +32,7 @@ function save (file, options) {
  */
 function print (options) {
   options.type = 'terminal'
+ 
   return qr.toString(options, function (err, resqr) {
     if (err) {
       console.error('Error:', err.message)
@@ -110,9 +53,9 @@ function print (options) {
  */
 function parseOptions (args) {
   return {
+    amount: args.amount,
     xnote: args.xnote,
     wallet: args.dest,
-    amount: args.amount,
     label: args.label,
     asset: args.asset,
     note: args.note,
@@ -158,6 +101,12 @@ function processInputs (opts) {
 var argv = yargs
   .detectLocale(false)
   .usage('Usage: $0 [options]')
+  .option('a', {
+    alias: 'amount',
+    description: 'Algorand URI amount field',
+    group: 'Algorand URI params:',
+    type: 'number'
+  })
   .option('x', {
     alias: 'xnote',
     description: 'Algorand URI xnote field',
@@ -169,13 +118,7 @@ var argv = yargs
     description: 'Algorand URI destination wallet (account) address field',
     group: 'Algorand URI params:',
     type: 'string'
-  })
-  .option('a', {
-    alias: 'amount',
-    description: 'Algorand URI amount field',
-    group: 'Algorand URI params:',
-    type: 'number'
-  })
+  })  
   .option('l', {
     alias: 'label',
     description: 'Algorand URI label field',

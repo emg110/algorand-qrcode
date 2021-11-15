@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>Algorand QRCode</title>
   <script src="js/qrcode.js"></script> <!-- This doesn't exist in the examples, Build the project before use. -->
-  <script src="js/qrcode.tosjis.js"></script> <!-- This doesn't exist in the examples, Build the project before use. -->
+  
   <style>
     * {
       box-sizing: border-box;
@@ -95,11 +95,13 @@
     }
 
     .button-div {
+      display:block;
       text-align: right;
       margin-top: 50px;
     }
 
     .qrcode-div {
+      display:block;
       text-align: center;
       margin-top: 25px;
     }
@@ -386,6 +388,7 @@
 
       <div class="col-35 button-div">
         <button id="generate-button">Create Algorand QR Code</button>
+        <br />
         <button id="clear-logo-button">Clear Logo Images</button>
       </div>
       <div class="col-35 qrcode-div">
@@ -397,12 +400,14 @@
           class="algorand-uri-container">
           <div class="control">
             <label style="text-align:center;" for="input-algorand-address">Generated Algorand URI:</label>
-            <p class="algorand-generated-uri" id="algorand-uri-result">algorand://</p>
+            
           </div>
+          
         </div>
+        
       </div>
     </div>
-
+    <input style="width:100%; bottom:0; margin:auto; display:block;text-align:center" class="algorand-generated-uri" id="algorand-uri-result" placeholder="algorand://"/>
 
   </div>
 
@@ -514,7 +519,6 @@
           light: lightColorEl.value,
           dark: darkColorEl.value
         },
-        toSJISFunc: QRCode.toSJIS
       }
 
       options.mode = 'Auto';
@@ -530,9 +534,10 @@
        */
       QRCode.toCanvas(canvasEl, options).then((res) => {
         canvasEl.style.display = 'inline'
+        console.log(res[1])
         var algoUriEl = document.getElementById('algorand-uri-result')
         if (algoUriEl) {
-          algoUriEl.innerHTML = res[1]
+          algoUriEl.value = res[1]
         }
 
       }).catch((error) => {

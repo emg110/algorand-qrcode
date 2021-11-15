@@ -15,8 +15,7 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## Demo
 
-###  [Simple Web Form Demo](https://emg110.github.io/algorandqrcode/)
-###  [React Demo (WIP)](https://emg110.github.io/algorandqrcodereact/)
+###  [Live Demo](https://emg110.github.io/algorandqrcode/)
 
 ## Links
 
@@ -29,11 +28,13 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## News
 
-> ###  [React Version (WIP)](https://github.com/emg110/algorand-qrcode-react/)
+> ###  Now completely supports React importing
+
+> ###  With `rawUri` option you can bypass algorand URI spec and create QRCode with your own URI or generally string of characters.
 
 > ### Background Image added with options (withBgLogo & bgLogo)
 
-> ### Center Image logo added with options (withLogo & logo)
+> ### Image printing on QR Code (position, style). Center Image logo added with options (withLogo & logo)
 
 > ### QR Code Scanner has been added (thanks to [JSQR ES6](https://www.npmjs.com/package/jsqr-es6))
 
@@ -50,8 +51,6 @@ A comprehensive javascript module with a complete set of tools to generate an st
 - Requires NodeJS version later than 10. 
 
 - Automatically checks & detecs out of scope characters and encodes them forcefully.. 
-  
-- HTML Escaping is optional (Since it's not yet supported by ALgorand offical wallet QR Scanning feature), activated with --html or -y (in CLI) or having `html: true` in options.
   
 - This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as [Algorand official Wallet](https://algorandwallet.com/)QR Scanner feature to match and adopt new features, specification requirements and extensions.
  
@@ -730,16 +729,11 @@ Color of light module. Value must be in hex format (RGBA).<br>
   > GS1 QR Codes : What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
   
   > More options: More configuration options on styling.
-  
-  > Image printing on QR Code (position, style)
-  
-  > Kanji QR Code Mode
 
   > Advanced Masks: Advance masking formulas for practicality and beautification.
   
-  > QR Code Scanner: Fast and solid QR Code scanner for many type of QR Code.
+
   
-  > QR Code Scanner Components: QR Code Scanner HTML Component, React widget and Material-UI configurable CARD components.
                                      
 
 
