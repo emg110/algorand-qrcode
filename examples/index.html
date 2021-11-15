@@ -534,10 +534,10 @@
        */
       QRCode.toCanvas(canvasEl, options).then((res) => {
         canvasEl.style.display = 'inline'
-        console.log(res[1])
+        console.log(res.alrorandURI)
         var algoUriEl = document.getElementById('algorand-uri-result')
         if (algoUriEl) {
-          algoUriEl.value = res[1]
+          algoUriEl.value = res.alrorandURI
         }
 
       }).catch((error) => {
