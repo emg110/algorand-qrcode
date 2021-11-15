@@ -141,7 +141,7 @@ qrcode [options]
 import * as QRCode from "algorand-qrcode";
 
  QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
-      .then((algorandUri) => {
+      .then(({ dataUrl, alrorandURI }) => {
         console.log(algorandUri);
       })
       .catch((err) => {
@@ -260,8 +260,9 @@ import * as QRCode from 'algorand-qrcode'
 
 // With promises
 QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
-  .then(url => {
-    console.log(url)
+  .then(({ dataUrl, alrorandURI }) => {
+    console.log(dataUrl)
+    console.log(alrorandURI)
   })
   .catch(err => {
     console.error(err)
