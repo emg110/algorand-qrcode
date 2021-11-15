@@ -1,6 +1,6 @@
 [<img title="Algorand QR Code Generator (Banner art by Stasya Tikhonova, curtsey of Algorand)" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
-# Algorand QR Code Generator
+# Algorand QR Code Generator V2.0.0
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 [![NPM](https://img.shields.io/npm/v/algorand-qrcode.svg)](https://www.npmjs.com/package/algorand-qrcode) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
@@ -27,6 +27,8 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 
 ## News
+
+> ##  Version 2.0.0 is out!
 
 > ###  Now completely supports React importing
 
@@ -132,6 +134,21 @@ qrcode [options]
 ```
 
 ## Usage
+
+### React
+
+```javascript
+import * as QRCode from "algorand-qrcode";
+
+ QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
+      .then((algorandUri) => {
+        console.log(algorandUri);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+```
+
 ### CLI
 
 ```
@@ -239,10 +256,10 @@ QRCode.toString({type:'terminal',wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CV
 Promises and Async/Await can be used in place of callback function.
 
 ```javascript
-import QRCode from 'algorand-qrcode'
+import * as QRCode from 'algorand-qrcode'
 
 // With promises
-QRCode.toDataURL({})
+QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
   .then(url => {
     console.log(url)
   })
