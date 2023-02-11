@@ -49,8 +49,7 @@ function parseOptions(args) {
     }
     return options
 }
-
-export default function algoqrcode (options) {
+const algoqrcode = (options) =>{
     if (isBrowser) {
         let opts = parseOptions(options)
         let qrcode = new QRCode(opts);
@@ -70,4 +69,5 @@ export default function algoqrcode (options) {
     }
 
 }
+export default algoqrcode
 

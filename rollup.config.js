@@ -9,11 +9,11 @@ const babelConfig = {
 }
 
 export default [{
-  input: 'src',
+  input: 'index.mjs',
   output: [{
     file: 'lib/bundle.min.js',
     format: "es",
-    name: 'algorand-qrcode',
+    name: 'algoqrcode',
     exports: 'named',
     sourcemap: true,
   }],
