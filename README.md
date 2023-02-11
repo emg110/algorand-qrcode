@@ -7,6 +7,8 @@
 
 New version 3 is a complete re-write of the Algorand QRCode generation tool. Simpler and more effective!
 
+Breaking changes: The way to import and some of options have changed , please consult this readme.
+
 <div style="display:block; text-align:center; align-items:center; margin:auto">
   <img style="display:block; margin:auto; cursor:pointer; text-align:center; align-items:center;" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
 </div>
