@@ -203,7 +203,7 @@ var argv = yargs
     .help('h')
     .alias('h', 'help')
     .version()
-    .example('$0 -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 1000000 -n "This is a test transaction for QR code generator"')
+    .example('$0 -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -m 1000000 -n "This is a test transaction for QR code generator"')
     .example('$0 -o file -f algorand-qrcode.svg -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "Coffee Payment at StarBucks"')
     .example('$0 -o file -f algorand-qrcode.svg -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 1000000 -n "This is a test USDT transfer for QR code generator file save"')
     .parserConfiguration({ 'parse-numbers': false })
