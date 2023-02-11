@@ -18,7 +18,7 @@ BgGray = "\x1b[100m"
 var QRCode = require('./QRCode'),
     QRErrorCorrectLevel = require('./QRCode/QRErrorCorrectLevel'),
     black = BgBlack +"  "+ Reset,
-    white = BgMagenta +"  "+ Reset,
+    white = BgWhite +"  "+ Reset,
     toCell = function (isBlack) {
         return isBlack ? black : white;
     },
