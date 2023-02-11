@@ -1,2 +1,2 @@
-import algoqrcode from "./src/index.mjs";
+import algoqrcode from "./lib/bundle.min.js";
 export default algoqrcode
