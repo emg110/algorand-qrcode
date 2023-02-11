@@ -9,7 +9,7 @@ const babelConfig = {
 }
 
 export default [{
-  input: 'index.mjs',
+  input: 'src',
   output: [{
     file: 'lib/bundle.min.js',
     format: "es",

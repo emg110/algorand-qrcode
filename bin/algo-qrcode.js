@@ -1,5 +1,5 @@
 const QRCode = require("qrcode-svg")
-const QRCodeTerminal = require("../terminal.js")
+const QRCodeTerminal = require("../src/terminal.js")
 const yargs = require('yargs');
 
 
