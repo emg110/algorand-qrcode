@@ -1,5 +1,5 @@
 import QRCode from "qrcode-svg"
-import QRCodeTerminal from "./terminal"
+import QRCodeTerminal from "./terminal.cjs"
 
 
 import { isBrowser, isNode, isWebWorker, isJsDom, isDeno } from "browser-or-node";

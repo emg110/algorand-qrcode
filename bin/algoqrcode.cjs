@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const QRCode = require("qrcode-svg")
-const QRCodeTerminal = require("../src/terminal.js")
+const QRCodeTerminal = require("../src/terminal.cjs")
 const yargs = require('yargs');
 
 
