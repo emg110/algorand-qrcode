@@ -154,8 +154,8 @@ Options:
   --version     Show version number                                    [boolean]
 
 Examples:
-    - Draw Algorand USDT(Tether) payment transaction QR Code in terminal window:
-    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 25 -s 128 -n "This is an Algorand USDT Tether payment transaction QR Code"
+    - Send 1 Algo transaction:
+    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -m 1000000 -s 128 -n "This is an Algo payment transaction QR Code"
 
     - Save Algorand contact label as svg image:
     node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
