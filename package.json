@@ -1,6 +1,6 @@
 {
   "name": "algorand-qrcode",
-  "version": "3.0.7",
+  "version": "3.0.9",
   "description": "Algorand QR Code generator module in JS",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "type": "module",
   "bin": {
-    "algoqrcode": "./bin/algo-qrcode.js"
+    "algoqrcode": "./bin/algoqrcode.js"
   },
   "main": "lib/algoqrcode.js",
   "author": "MG <emg110@gmail.com>",
@@ -56,7 +56,7 @@
   "scripts": {
     "pretest": "npm run lint",
     "build": "rollup -c",
-    "cli": "node ./bin/algo-qrcode.js"
+    "cli": "node ./bin/algoqrcode.js"
   },
   "license": "MIT",
   "bugs": {

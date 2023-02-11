@@ -89,7 +89,7 @@ npm install --save algorand-qrcode
 and then 
 
 ```shell
-import algoqrcode from "algorand-qrcode/lib/bundle.min.js";
+import algoqrcode from "algorand-qrcode/lib/bundle.min.js"
 ```
 
 or, install it globally to use `qrcode` cli command to generate Algorand URI qrcode images in your terminal.
@@ -108,7 +108,7 @@ algoqrcode [options]
 ### Browser and Frameworks (react...) use
 
 ```javascript
-import algoqrcode from "algorand-qrcode";
+import algoqrcode from "algorand-qrcode/lib/bundle.min.js";
 const MyQrCodeComponent = (props)=>{
   let qrcode = algoqrcode({wallet:props.wallet, label:props.label})
   let scg = qrcode.svg()
