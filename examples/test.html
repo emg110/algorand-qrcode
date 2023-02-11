@@ -16,13 +16,12 @@
         import algoqrcode from '../lib/bundle.min.js'
         let qrcode = algoqrcode({
             wallet: "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
-            label: "Test Label",
+            label: "emg110",
             output: "svg",
             size:256
         })
         let svg = qrcode.svg()
         console.log(svg)
-        console.log("SVG is here")
         document.getElementById("svg-viewbox").innerHTML = svg
     </script>
 
