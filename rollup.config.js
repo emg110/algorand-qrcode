@@ -9,7 +9,7 @@ const babelConfig = {
 }
 
 export default [{
-  input: 'index.mjs',
-  output: [{ file: 'lib/algoqrcode.js', name: 'algoqrcode', exports: 'named' }],
+  input: 'src',
+  output: [{ file: 'lib/browser.js', name: 'algoqrcode', exports: 'named' }],
   plugins: [commonjs(), resolve(), babel(babelConfig), terser()]
 }]

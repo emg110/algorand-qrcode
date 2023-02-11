@@ -13,27 +13,27 @@ function parseOptions(args) {
   background: "#ffffff",
   ecl: "M",
 */
-    let content = "THIS IS TEST QR CODE"
+    let content = "algorand://"
     let amount = args.amount;
     let wallet = args.wallet;
     let label = args.label;
     let asset = args.asset;
     let note = args.note;
-    if (!!label) {
-        content = "algorand://" + wallet + "&label=" + label;
-    } else if (!!asset) {
+    if (!!label && !!wallet) {
+        content = "algorand://" + wallet+ "?" + "&label=" + label;
+    } else if (!!asset && !!wallet) {
         if (!!note && amount > 0) {
-            content = "algorand://" + wallet + "&amount=" + amount + "&asset=" + asset + "&note=" + note;
+            content = "algorand://" + wallet+ "?" + "&amount=" + amount + "&asset=" + asset + "&note=" + note;
         } else if (amount > 0) {
-            content = "algorand://" + wallet + "&amount=" + amount + "&asset=" + asset;
+            content = "algorand://" + wallet+ "?" + "&amount=" + amount + "&asset=" + asset;
         } else if (amount === 0) {
-            content = "algorand://" + "amount=0" + "&asset=" + asset;
+            content = "algorand://?" + "amount=0"  + "&asset=" + asset;
         }
 
-    } else if (!!note) {
-        content = "algorand://" + wallet + "&amount=" + amount + "&note=" + note;
-    } else {
-        content = "algorand://" + wallet + "&amount=" + amount;
+    } else if (!!note && !!wallet && !!amount) {
+        content = "algorand://" + wallet+ "?" + "&amount=" + amount + "&note=" + note;
+    } else if ( !!wallet && !!amount){
+        content = "algorand://" + wallet+ "?" + "&amount=" + amount;
     }
     let options = {
         content: content,

@@ -100,7 +100,7 @@ npm install -g algorand-qrcode
 and then 
 
 ```shell
-qrcode [options]
+algoqrcode [options]
 ```
 
 ## Usage
