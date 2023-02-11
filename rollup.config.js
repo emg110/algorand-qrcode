@@ -10,6 +10,15 @@ const babelConfig = {
 
 export default [{
   input: 'src',
-  output: [{ file: 'lib/browser.js', name: 'algoqrcode', exports: 'named' }],
+  output: [{
+    file: 'lib/bundle.min.js',
+    format: "es",
+    name: 'algorand-qrcode',
+    exports: 'named',
+    sourcemap: true,
+  }],
   plugins: [commonjs(), resolve(), babel(babelConfig), terser()]
 }]
+
+
+
