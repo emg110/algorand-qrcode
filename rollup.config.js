@@ -9,7 +9,7 @@ const babelConfig = {
 }
 
 export default [{
-  input: 'lib/browser.js',
-  output: [{ file: 'build/qrcode.js', format: 'iife', name: 'QRCode', exports: 'named' },{ file: 'examples/js/qrcode.js', format: 'iife', name: 'QRCode', exports: 'named' }],
+  input: 'index.mjs',
+  output: [{ file: 'lib/algoqrcode.js', name: 'algoqrcode', exports: 'named' }],
   plugins: [commonjs(), resolve(), babel(babelConfig), terser()]
 }]

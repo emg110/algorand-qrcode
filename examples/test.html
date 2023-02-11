@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Test</title>
+</head>
+
+<body>
+    <h1>Test</h1>
+    <p id="svg-viewbox" style="width: 256px;">
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+    </p>
+
+    <script type="module">
+        import algoqrcode from '../lib/algoqrcode.js'
+        let qrcode = algoqrcode({
+            wallet: "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
+            label: "Test Label",
+            output: "svg",
+            size:256
+        })
+        let svg = qrcode.svg()
+        console.log(svg)
+        console.log("SVG is here")
+        document.getElementById("svg-viewbox").innerHTML = svg
+    </script>
+
+</body>
+
+</html>

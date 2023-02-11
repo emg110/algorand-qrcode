@@ -1,11 +1,11 @@
 [<img title="Algorand QR Code Generator (Banner art by Stasya Tikhonova, curtsey of Algorand)" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
-# Algorand QR Code Generator V2.0.0
+# Algorand QR Code Generator V3.0.0
 [![npm](https://img.shields.io/static/v1?label=Algorand&message=Published&color=green&style=flat-square)](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 [![NPM](https://img.shields.io/npm/v/algorand-qrcode.svg)](https://www.npmjs.com/package/algorand-qrcode) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
-A comprehensive javascript module with a complete set of tools to generate an standard Algorand URI (RFC 3986) and  QR code, exportable to SVG, PNG and UTF8. Exported media types are File, UTF8 text and DataURL. Works in Terminal, Node and modern browsers. Contains a full set of examples including API server, static server and web form QR generator. Includes a full featured CLI to generate QR codes in terminals too.
+New version 3 is a complete re-write of the Algorand QRCode generation tool. Simpler and more effective!
 
 <div style="display:block; text-align:center; align-items:center; margin:auto">
   <img style="display:block; margin:auto; cursor:pointer; text-align:center; align-items:center;" title="Generated QR example" src="./examples/images/generated-qr.png" height="auto" width="150">
@@ -28,72 +28,44 @@ A comprehensive javascript module with a complete set of tools to generate an st
 
 ## News
 
-> ##  Version 2.0.0 is out!
+> ##  Version 3.0.0 is out!
 
-> ###  Now completely supports React importing
+> ###  Now completely supports any modern web framework
 
-> ###  With `rawUri` option you can bypass algorand URI spec and create QRCode with your own URI or generally string of characters.
+> ### Modern JS Module in both Node and Browser
 
-> ### Background Image added with options (withBgLogo & bgLogo)
-
-> ### Image printing on QR Code (position, style). Center Image logo added with options (withLogo & logo)
-
-> ### QR Code Scanner has been added (thanks to [JSQR ES6](https://www.npmjs.com/package/jsqr-es6))
 
 
 ## Technical notes
 
-- Default amount is considered in **Micro Algos** by default (what ever amount will be multiplied by 1000000 during URI creation andbefore QR Code generation) since version 1.0.0.
-
-- Dear developers please beware to set your **wallet's mode into development mode** and network to **testnet or betanet** before getting started to avoid any unwanted transactions on mainnet which means real transfer of Algo or some assets. So please do as a developer would do.
+- Amount is in MicroAlgos
   
-  
-- Algorand URI reference specificatgion: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
+- Algorand URI reference specification: [Algorand payment prompts specification](https://developer.algorand.org/docs/reference/payment_prompts/).
   
 - Requires NodeJS version later than 10. 
-
-- Automatically checks & detecs out of scope characters and encodes them forcefully.. 
   
-- This library will closely follow Algorand’s URI specification document drafts and published versions closely as well as [Algorand official Wallet](https://algorandwallet.com/)QR Scanner feature to match and adopt new features, specification requirements and extensions.
  
 
 ## Table of contents
 
-- [Screenshots](#screenshots)
+
 - [Highlights](#highlights)
 - [Algorand URI's ABNF Grammar](#algorand-uri-abnf-grammar)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Error correction level](#error-correction-level)
 - [API](#api)
-- [Comming soon](#coming-soon)
 - [Mentioned Trademarks](#mentioned-trademarks)
 - [Credits](#credits)
 - [License](#license)
 
-## Screenshots
-<div style="display:block">
 
-<img style="display:inline-block;cursor:pointer" title="QR Generator CLI example" src="./examples/images/algorand-qrcode-cli.png" height="auto" width="150">
-
-<img style="display:inline-block;cursor:pointer" title="QR Generator web form example" src="./examples/images/algorand-qrcode-web-form2.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generator with centered logo" src="./examples/images/algorand-qrcode-web-form3.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generator with background logo" src="./examples/images/algorand-qrcode-web-form4.png" height="auto" width="150">
-<img style="display:inline-block;cursor:pointer" title="QR Generation express API example" src="./examples/images/algorand-qrcode-api-server.png" height="auto" width="150">
-
-</div>
 
 ## Highlights
-- This library can be built for browser, be imported or required in NodeJS or directly rendered in terminal.
+- Supports NodeJS and Browser.
 - Supports RFC 3986 and Algorand URI ABNF Grammar.
-- Optionally can automatically escape HTML (`--html` in CLI or `{html:true}` in code).
-- Validates Algorand fields on client side without js-algorand-sdk (address, amount, asset ID, ...).
 - CLI utility.
-- Save QR code as image (SVG, PNG, JPEG,...).
-- Support for some styling and colors (dark , light,..).
-- Support for chinese, cyrillic, greek and japanese characters in transaction labels and notes.
-- Auto generates optimized segments for best data compression and smallest QR Code size.
-- App agnostic readability, Generated QR Codes by definition are app agnostic.
+- Save QR code as valid SVG image or text
 
 ## Algorand URI ABNF Grammar
 
@@ -101,17 +73,15 @@ A comprehensive javascript module with a complete set of tools to generate an st
     algorandurn     = "algorand://" algorandaddress [ "?" algorandparams ]
     algorandaddress = *base32
     algorandparams  = algorandparam [ "&" algorandparams ]
-    algorandparam   = [ amountparam / labelparam / noteparam / assetparam / otherparam ]
+    algorandparam   = [ amountparam / labelparam / noteparam / assetparam  ]
     amountparam     = "amount=" *digit
     labelparam      = "label=" *qchar
     assetparam      = "asset=" *digit
-    noteparam       = (xnote | note)
-    xnote           = "xnote=" *qchar
     note            = "note=" *qchar
 ```
 
-## Installation
-Inside your project folder do:
+## Installation and use
+
 
 ```shell
 npm install --save algorand-qrcode
@@ -119,10 +89,10 @@ npm install --save algorand-qrcode
 and then 
 
 ```shell
-cd bin && node qrcode [options]
+import algoqrcode from algorand-qrcode
 ```
 
-or, install it globally to use `qrcode` from the command line to save Algorand URI qrcode and barcode   images or generate ones you can view in your terminal.
+or, install it globally to use `qrcode` cli command to generate Algorand URI qrcode images in your terminal.
 
 ```shell
 npm install -g algorand-qrcode
@@ -135,18 +105,17 @@ qrcode [options]
 
 ## Usage
 
-### React
+### Browser and Frameworks (react...) use
 
 ```javascript
-import * as QRCode from "algorand-qrcode";
-
- QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
-      .then(({ dataUrl, alrorandURI }) => {
-        console.log(algorandUri);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+import algoqrcode from "algorand-qrcode";
+const MyQrCodeComponent = (props)=>{
+  let qrcode = algoqrcode({wallet:props.wallet, label:props.label})
+  let scg = qrcode.svg()
+  return svg
+}
+ 
+      
 ```
 
 ### CLI
@@ -154,128 +123,57 @@ import * as QRCode from "algorand-qrcode";
 ```
 Usage: qrcode [options]
 
-Algorand switch:
-  -x, --xnote Expects "xnote" instread of "note" for Algorand URI      [boolean]
-  -y, --html  Automatically HTML escapes all text strings              [boolean]
-
 Algorand options:
-  -a, --amount Amount (in Micro Algos) of Algorand transaction          [number]
+  -m, --amount Amount (in Micro Algos) of Algorand transaction          [number]
+  -w, --dest Destination Wallet address (Algorand account address)      [string]
   -l, --label Label of Algorand transaction                             [string]
-  -s, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
-  -n, --note note/xnote (depends on -a | --xnote switch)                [string]
-  -d, --dest Destination Wallet address (Algorand account address)      [string]
+  -a, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
+  -n, --note note                                                       [string]
 
 QR Code options:
-  -v, --qversion  QR Code symbol version (1 - 40)                       [number]
-  -e, --error     Error correction level           [choices: "L", "M", "Q", "H"]
-  -m, --mask      Mask pattern (0 - 7)                                  [number]
+              
+  -e, --ecl     Error correction level           [choices: "L", "M", "Q", "H"]
+
 
 
 Renderer options:
-  -t, --type        Output type                  [choices: "png", "svg", "utf8"]
-  -w, --width       Image width (px)                                    [number]
-  -r, --ratio       Scale ratio factor                                  [number]
-  -q, --qzone       Quiet zone size                                     [number]
-  -b, --background  Light RGBA hex color
-  -f, --foreground   Dark RGBA hex color
-  -p, --puny  Output smaller QR code to terminal                       [boolean]
-  -i, --inverse  Invert foreground and background colors               [boolean]
+  -o, --output        Output type           [choices: "file", "svg", "terminal"]
+  -w, --wallet        Destination wallet                                [number]
+  -p, --padding       Padding around QRcode                             [number]
+  -b, --background    Light color                                       [string]
+  -c, --color         Dark color                                        [string]
+  -s, --size          QRcode image width and height (px)                [number]
+  -f, --file          Output file                                       [string]
+
 
 Options:
-  -o, --output  Output file
+
   -h, --help    Show help                                              [boolean]
   --version     Show version number                                    [boolean]
 
 Examples:
     - Draw Algorand USDT(Tether) payment transaction QR Code in terminal window:
-    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 25 -s 45 -n "This is an Algorand USDT Tether payment transaction QR Code" -p
+    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -a 25 -s 128 -n "This is an Algorand USDT Tether payment transaction QR Code"
 
-    - Save Algorand contact label as png image:
-    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o emg110ContactQrCode.png 
+    - Save Algorand contact label as svg image:
+    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
 
-    - Use red as foreground color:
-    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -f F00 -o paymentQR.png -a 12 -x -n "This is an Algorand Algo payment transaction QR Code"
-```
-If not specified, output type is guessed from file extension.<br>
-Recognized extensions are `png`, `svg` and `txt`.
-
-### Browser
-`algorand-qrcode` can be used in browser through including the precompiled bundle present in `build/` folder.
-
-
-
-```javascript
-// index.js -> bundle.js
-var QRCode = require('algorand-qrcode')
-var canvas = document.getElementById('canvas')
-
-QRCode.toCanvas(canvas, {wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (error) {
-  if (error) console.error(error)
-  console.log('success!');
-})
 ```
 
-#### Precompiled bundle
-```html
-<canvas id="canvas"></canvas>
-
-<script src="/build/qrcode.js"></script>
-<script>
-  QRCode.toCanvas(document.getElementById('canvas'), {wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (error) {
-    if (error) console.error(error)
-    console.log('success!');
-  })
-</script>
-```
-
-If you install through `npm`, precompiled files will be available in `node_modules/algorand-qrcode/build/` folder.
-
-The precompiled bundle have support for [Internet Explorer 10+, Safari 5.1+, and all evergreen browsers](https://browserl.ist/?q=defaults%2C+IE+%3E%3D+10%2C+Safari+%3E%3D+5.1).
 
 ### NodeJS
 Require the module `algorand-qrcode`
 
 ```javascript
-var QRCode = require('algorand-qrcode')
-
-QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, url) {
-  console.log(url)
-})
-```
-
-render a qrcode for the terminal
-```js
-var QRCode = require('algorand-qrcode')
-
-QRCode.toString({type:'terminal',wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, url) {
-  console.log(url)
-})
-```
-
-### ES6/ES7
-Promises and Async/Await can be used in place of callback function.
-
-```javascript
-import * as QRCode from 'algorand-qrcode'
-
-// With promises
-QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"})
-  .then(({ dataUrl, alrorandURI }) => {
-    console.log(dataUrl)
-    console.log(alrorandURI)
-  })
-  .catch(err => {
-    console.error(err)
-  })
-
-// With async/await
-const generateQR = async text => {
-  try {
-    console.log(await QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}))
-  } catch (err) {
-    console.error(err)
-  }
-}
+ import algoqrcode from '../lib/algoqrcode.js'
+        let qrcode = algoqrcode({
+            wallet: "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
+            label: "Test Label",
+            output: "svg",
+            size:256
+        })
+        let svg = qrcode.svg()
+        console.log(svg)
 ```
 
 ## Error correction level
@@ -297,327 +195,10 @@ Possible levels are shown below:
 
 The percentage indicates the maximum amount of damaged surface after which the symbol becomes unreadable.
 
-Error level can be set through `options.errorCorrectionLevel` property.<br>
+Error level can be set through `options.ecl` property.<br>
 If not specified, the default value is `M`.
 
-```javascript
-QRCode.toDataURL({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com", errorCorrectionLevel: 'H'}, function (err, url) {
-  console.log(url)
-})
-```
 
-## API
-Browser:
-- [create()](#createtext-options)
-- [toCanvas()](#tocanvascanvaselement-text-options-cberror)
-- [toDataURL()](#todataurltext-options-cberror-url)
-- [toString()](#tostringtext-options-cberror-string)
-- [jsQr{}](#createtext-options)
-- [escapeHtml()](#createtext-options)
-- [encodeUrl()](#createtext-options)
-
-Server:
-- [create()](#createtext-options)
-- [toCanvas()](#tocanvascanvas-text-options-cberror)
-- [toDataURL()](#todataurltext-options-cberror-url-1)
-- [toString()](#tostringtext-options-cberror-string-1)
-- [toFile()](#tofilepath-text-options-cberror)
-- [toFileStream()](#tofilestreamstream-text-options)
-- [escapeHtml()](#createtext-options)
-- [encodeUrl()](#createtext-options)
-
-### Browser API
-#### `create([options])`
-Creates QR Code symbol and returns a qrcode object.
-
-##### `options`
-
-See [QR Code options](#qr-code-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `returns`
-Type: `Object`
-
-```javascript
-// QRCode object
-{
-  modules,              // Bitmatrix class with modules data
-  version,              // Calculated QR Code version
-  errorCorrectionLevel, // Error Correction Level
-  maskPattern,          // Calculated Mask pattern
-  segments              // Generated segments
-}
-```
-
-<br>
-
-#### `toCanvas(canvasElement, [options], [cb(error)])`
-#### `toCanvas([options], [cb(error, canvas)])`
-Draws qr code symbol to canvas.<br>
-If `canvasElement` is omitted a new canvas is returned.
-
-##### `canvasElement`
-Type: `DOMElement`
-
-Canvas where to draw QR Code.
-
-
-##### `options`
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-##### Example
-```javascript
-QRCode.toCanvas({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, canvas) {
-  if (err) throw err
-
-  var container = document.getElementById('container')
-  container.appendChild(canvas)
-})
-```
-
-<br>
-
-#### `toDataURL([options], [cb(error, url)])`
-#### `toDataURL(canvasElement, [options], [cb(error, url)])`
-Returns a Data URI containing a representation of the QR Code image.<br>
-If provided, `canvasElement` will be used as canvas to generate the data URI.
-
-##### `canvasElement`
-Type: `DOMElement`
-
-Canvas where to draw QR Code.
-
-##### `options`
-
-- ###### `type`
-  Type: `String`<br>
-  Default: `image/png`
-
-  Data URI format.<br>
-  Possible values are: `image/png`, `image/jpeg`, `image/webp`.<br>
-
-- ###### `rendererOpts.quality`
-  Type: `Number`<br>
-  Default: `0.92`
-
-  A Number between `0` and `1` indicating image quality if the requested type is `image/jpeg` or `image/webp`.
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-##### Example
-```javascript
-var opts = {
-  wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
-  label:"emg110@gmail.com",
-  errorCorrectionLevel: 'H',
-  type: 'image/jpeg',
-  quality: 0.3,
-  margin: 1,
-  color: {
-    dark:"#010599FF",
-    light:"#FFBF60FF"
-  }
-}
-
-QRCode.toDataURL(opts, function (err, url) {
-  if (err) throw err
-
-  var img = document.getElementById('image')
-  img.src = url
-})
-```
-<br>
-
-#### `toString([options], [cb(error, string)])`
-
-Returns a string representation of the QR Code.<br>
-
-
-##### `options`
-
-- ###### `type`
-  Type: `String`<br>
-  Default: `utf8`
-
-  Output format.<br>
-  Possible values are: `terminal`,`utf8`, and `svg`.
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-##### Example
-```javascript
-QRCode.toString({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com"}, function (err, string) {
-  if (err) throw err
-  console.log(string)
-})
-```
-
-<br>
-
-
-### Server API
-#### `create([options])`
-See [create](#createtext-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-<br>
-
-#### `toCanvas(canvas, [options], [cb(error)])`
-Draws qr code symbol to [node canvas](https://github.com/Automattic/node-canvas).
-
-
-
-##### `options`
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-<br>
-
-#### `toDataURL([options], [cb(error, url)])`
-Returns a Data URI containing a representation of the QR Code image.<br>
-Only works with `image/png` type for now.
-
-
-##### `options`
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-<br>
-
-#### `toString([options], [cb(error, string)])`
-Returns a string representation of the QR Code.<br>
-If choosen output format is `svg` it will returns a string containing xml code.
-
-##### `options`
-
-###### `type`
-  Type: `String`<br>
-  Default: `utf8`
-
-  Output format.<br>
-  Possible values are: `utf8`, `svg`, `terminal`.
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-##### Example
-```javascript
-QRCode.toString({wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI", label:"emg110@gmail.com", type: 'utf8'}, function (err, string) {
-  if (err) throw err
-  console.log(string)
-})
-```
-
-<br>
-
-#### `toFile(path, [options], [cb(error)])`
-Saves QR Code to image file.<br>
-If `options.type` is not specified, the format will be guessed from file extension.<br>
-Recognized extensions are `png`, `svg`, `txt`.
-
-##### `path`
-Type: `String`
-
-Path where to save the file.
-
-
-##### `options`
-
-- ###### `type`
-  Type: `String`<br>
-  Default: `png`
-
-  Output format.<br>
-  Possible values are: `png`, `svg`, `utf8`.
-
-- ###### `rendererOpts.deflateLevel` **(png only)**
-  Type: `Number`<br>
-  Default: `9`
-
-  Compression level for deflate.
-
-- ###### `rendererOpts.deflateStrategy` **(png only)**
-  Type: `Number`<br>
-  Default: `3`
-
-  Compression strategy for deflate.
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-##### `cb`
-Type: `Function`
-
-Callback function called on finish.
-
-##### Example
-```javascript
-QRCode.toFile('path/to/filename.png', {
-  wallet:"AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
-  label:"emg110@gmail.com",
-  color: {
-    dark: '#00F',  // Blue dots
-    light: '#0000' // Transparent background
-  }
-}, function (err) {
-  if (err) throw err
-  console.log('done')
-})
-```
-
-<br>
-
-#### `toFileStream(stream, [options])`
-Writes QR Code image to stream. Only works with `png` format for now.
-
-##### `stream`
-Type: `stream.Writable`
-
-Node stream.
-
-
-##### `options`
-
-See [All Options](#all-options).<br>
-See [Algorand URI options](#algorand-uri-params).
-
-
-### All Options
 
 #### QR Code options
 
@@ -676,11 +257,6 @@ See [Algorand URI options](#algorand-uri-params).
 
   Wallet address for Algorand transaction.
 
-##### `xnote`
-  Type: `Boolean`<br>
-
-  Specifies if the xnote or note field is used for Algorand URI construction.
-  
 ##### `amount`
   Type: `Number`<br>
 
@@ -699,59 +275,45 @@ See [Algorand URI options](#algorand-uri-params).
 ##### `note`
   Type: `String`<br>
 
-  note or xnote field content of Algorand transaction. The xnote option determines the name of the field with this content to be note or xnote.
+  note  field content of Algorand transaction.
 
 
 #### Renderers options
-##### `margin`
+
+##### `ecl`
+  Type: `String`<br>
+  Default: `M`
+
+  Define the error correction level.
+
+##### `padding`
   Type: `Number`<br>
-  Default: `4`
+  Default: `5`
 
   Define how much wide the quiet zone should be.
 
-##### `scale`
+##### `size`
   Type: `Number`<br>
-  Default: `4`
+  Default: `128`
 
-  Scale factor. A value of `1` means 1px per modules (black dots).
+  Width and height.
 
-##### `small`
-  Type: `Boolean`<br>
-  Default: `false`
 
-  Relevant only for terminal renderer. Outputs smaller QR code.
-
-##### `width`
-  Type: `Number`<br>
-
-  Forces a specific width for the output image.<br>
-  If width is too small to contain the qr symbol, this option will be ignored.<br>
-  Takes precedence over `scale`.
-
-##### `color.dark`
+##### `color`
 Type: `String`<br>
 Default: `#000000ff`
 
 Color of dark module. Value must be in hex format (RGBA).<br>
 Note: dark color should always be darker than `color.light`.
 
-##### `color.light`
+##### `background`
 Type: `String`<br>
 Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
 
 
-## Coming Soon
 
-  > GS1 QR Codes : What defines a GS1 qrcode is a header with metadata that describes your gs1 information.
-  
-  > More options: More configuration options on styling.
-
-  > Advanced Masks: Advance masking formulas for practicality and beautification.
-  
-
-  
                                      
 
 
@@ -762,10 +324,7 @@ Color of light module. Value must be in hex format (RGBA).<br>
 ## Credits
 > Special appreciations to  [Sheghzo](https://github.com/sheghzo/).
 
-> This repository uses and appreciates great open source software and code by forking, extention and integration of:
--  [node-qrcode](https://github.com/soldair/node-qrcode)
--  [escape-html](https://github.com/component/escape-html)
--  [encodeurl](https://github.com/pillarjs/encodeurl)
+
   
 > The idea for this lib was inspired by: Algorand developers portal Article [Payment Prompts with Algorand Mobile Wallet](https://developer.algorand.org/articles/payment-prompts-with-algorand-mobile-wallet/ ) ,from Jason Paulos.
 
@@ -773,7 +332,6 @@ Color of light module. Value must be in hex format (RGBA).<br>
 ## Mentioned Trademarks
 "QR Code" curtsey of :<br>
 [<img title="DENSO WAVE Incorporated" src="https://milliontech.com/wp-content/uploads/2017/01/Denso-Wave-Logo-300x102.png" height="auto" width="128">](https://www.denso-wave.com)
-
 
 
 "Algorand" curtsey of:<br>

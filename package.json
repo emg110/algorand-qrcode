@@ -1,63 +1,70 @@
 {
   "name": "algorand-qrcode",
-  "version": "2.1.0",
-  "description": "Algorand QR Code javascript module",
+  "version": "3.0.0",
+  "description": "Algorand QR Code generator module in JS",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emg110/algorand-qrcode.git"
   },
+  "bin": {
+    "algoqrcode": "./bin/algo-qrcode.js"
+  },
+  "main": "./index.mjs",
+  "author": "MG <emg110@gmail.com>",
+  "contributors": [
+    {
+      "name": "MG",
+      "email": "emg110@gmail.com",
+      "url": "http://github.com/emg110"
+    },
+    {
+      "name": "Sheghzo",
+      "email": "shm1358110@gmail.com",
+      "url": "http://github.com/sheghzo"
+    }
+  ],
+  "homepage": "https://github.com/emg110/algorand-qrcode#readme",
   "private": false,
   "dependencies": {
-    "@algonaut/algo-validation-agent": "^0.5.0",
-    "dijkstrajs": "^1.0.1",
-    "encode-utf8": "^1.0.3",
+    "encode-utf8": "^2.0.0",
     "express-favicon": "^2.0.1",
-    "jsqr-es6": "^1.3.1-1",
-    "pngjs": "^5.0.0",
-    "yargs": "^17.0.1"
+    "yargs": "^17.6.2",
+    "qrcode-terminal": "^0.12.0",
+    "qrcode-svg": "^1.1.0",
+    "colors": "^1.4.0",
+    "browser-or-node": "^2.1.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "browserify": "^16.5.1",
-    "canvas": "^2.6.1",
-    "canvasutil": "0.0.4",
-    "colors": "^1.4.0",
-    "express": "^4.17.1",
-    "htmlparser2": "^4.1.0",
     "rollup": "^2.6.1",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "sinon": "^9.0.2",
-    "standard": "^14.3.3",
-    "tap": "^15.0.9"
+    "rollup-plugin-terser": "^7.0.2",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@babel/preset-react": "^7.18.6",
+    "es2015": "latest",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babelify": "^10.0.0"
   },
   "scripts": {
     "pretest": "npm run lint",
     "build": "rollup -c",
-    "prepublish": "npm run build",
-    "api": "node examples/api-server.js",
-    "static": "node examples/static-server.js"
+    "help": "browserify --help",
+    "run": "node ./bin/algoqrcode.mjs"
   },
-  "author": "MG <emg110@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/emg110/algorand-qrcode/issues"
   },
-  "main": "./lib/index.js",
-  "browser": {
-    "./lib/index.js": "./lib/browser.js",
-    "fs": false
+  "engines": {
+    "node": ">=10.0.0"
   },
-  "files": [
-    "bin",
-    "build",
-    "lib",
-    "helper"
-  ],
-  "homepage": "https://github.com/emg110/algorand-qrcode#readme",
   "browserslist": {
     "production": [
       ">0.2%",
