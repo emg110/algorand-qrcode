@@ -45,7 +45,7 @@ function handle(options) {
 
         return console.log(new QRCode(options).svg())
     } else {
-        return QRCodeTerminal.generate(options.content)
+        return QRCodeTerminal.generate(options.content, {small: true})
     }
 
 }

@@ -62,7 +62,7 @@ const algoqrcode = (options) =>{
             return qrcode
         } else {
             let opts = parseOptions(options)
-            return QRCodeTerminal.generate(opts.content);
+            return QRCodeTerminal.generate(opts.content, {small: true});
         }
 
 
