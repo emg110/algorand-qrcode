@@ -202,10 +202,6 @@ If not specified, the default value is `M`.
 
 #### QR Code options
 
-##### `version`
-  Type: `Number`<br>
-
-  QR Code version. If not specified the more suitable value will be calculated.
     
 ##### `errorCorrectionLevel`
   Type: `String`<br>
@@ -214,41 +210,6 @@ If not specified, the default value is `M`.
   Error correction level.<br>
   Possible values are `low, medium, quartile, high` or `L, M, Q, H`.
 
-##### `maskPattern`
-  Type: `Number`<br>
-
-  Mask pattern used to mask the symbol.<br>
-  Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.<br>
-  If not specified the more suitable value will be calculated.
-
-##### `html`
-  Type: `Boolean`<br>
-
-  Specifies if the text string fields are to be HTML Escaped or not.
-
-##### `withBgLogo`
-  Type: `Boolean`<br>
-
-  Specifies if the QR Code should use an image (passed as bgLogo option) as background image.
-
-##### `withBg`
-  Type: `Boolean`<br>
-
-  Specifies if the QR Code should use an image (passed as bgLogo option) as centered logo image with specified size (logoSize option).
-##### `bgLogo`
-  Type: `String`<br>
-
-  Base 64 DataURL string of background image.
-##### `logo`
-  Type: `String`<br>
-
-  Base 64 DataURL string of centered image.
-
-##### `logoSize`
-  Type: `Number`<br>
-
-  Specifies size of centered logo image if the boolean option withLogo is set as TRUE
-  
 
 #### Algorand URI params
 
@@ -311,10 +272,6 @@ Type: `String`<br>
 Default: `#ffffffff`
 
 Color of light module. Value must be in hex format (RGBA).<br>
-
-
-
-                                     
 
 
 ## License
