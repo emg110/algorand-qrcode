@@ -165,7 +165,7 @@ Examples:
 Import the module `algorand-qrcode` for your NodeJS module
 
 ```javascript
-        import algoqrcode from '../lib/bundle.min.js'
+        import algoqrcode from 'algorand-qrcode'
         let qrcode = algoqrcode({
             wallet: "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI",
             label: "Test Label",
