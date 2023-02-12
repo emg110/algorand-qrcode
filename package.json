@@ -31,7 +31,6 @@
     "express-favicon": "^2.0.1",
     "yargs": "^17.6.2",
     "qrcode-svg": "^1.1.0",
-    "colors": "^1.4.0",
     "browser-or-node": "^2.1.1"
    
   },
