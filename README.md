@@ -126,7 +126,7 @@ Usage: qrcode [options]
 
 Algorand options:
   -m, --amount Amount (in Micro Algos) of Algorand transaction          [number]
-  -w, --dest Destination Wallet address (Algorand account address)      [string]
+  -w, --wallet Destination Wallet address (Algorand account address)      [string]
   -l, --label Label of Algorand transaction                             [string]
   -a, --asset Algorand asset id (in case of Algorand ASA transfer)      [string]
   -n, --note note                                                       [string]
@@ -157,7 +157,7 @@ Examples:
     node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -m 1000000 -s 128 -n "This is an Algo payment transaction QR Code"
 
     - Save Algorand contact label as svg image:
-    node qrcode -d "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
+    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
 
 ```
 
