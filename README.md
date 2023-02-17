@@ -55,7 +55,6 @@ Breaking changes: The way to import and some of options have changed , please co
 - [Installation](#installation)
 - [Usage](#usage)
 - [Error correction level](#error-correction-level)
-- [API](#api)
 - [Mentioned Trademarks](#mentioned-trademarks)
 - [Credits](#credits)
 - [License](#license)
