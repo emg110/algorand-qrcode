@@ -2,3 +2,5 @@
 /build
 package-lock.json
 /examples/js
+.DS_Store
+.DS_Store
