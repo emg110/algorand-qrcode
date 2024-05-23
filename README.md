@@ -121,7 +121,7 @@ const MyQrCodeComponent = (props)=>{
 ### CLI
 
 ```
-Usage: qrcode [options]
+Usage: algoqrcode [options]
 
 Algorand options:
   -m, --amount Amount (in Micro Algos) of Algorand transaction          [number]
