@@ -1,6 +1,6 @@
 [<img title="Algorand QR Code Generator (Banner art by Stasya Tikhonova, curtsey of Algorand)" src="./examples/images/algorand-qrcode-banner.jpg">](https://developer.algorand.org/solutions/algorand-qr-code-generator-javascript/)
 
-# Algorand QR Code Generator V3.1.9
+# Algorand QR Code Generator V3.2.0
 [![NPM](https://img.shields.io/npm/v/algorand-qrcode.svg)](https://www.npmjs.com/package/algorand-qrcode) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=flat-square)](https://github.com/emg110/algorand-qrcode/blob/master/license)
 
@@ -29,7 +29,7 @@ Breaking changes: The way to import and some of options have changed , please co
 
 ## News
 
-> ##  Version 3.0.0 is out!
+> ##  Version 3.2.0 is now here!
 
 > ###  Now completely supports any modern web framework
 
@@ -153,10 +153,10 @@ Options:
 
 Examples:
     - Send 1 Algo transaction:
-    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -m 1000000 -s 128 -n "This is an Algo payment transaction QR Code"
+    algoqrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -m 1000000 -s 128 -n "This is an Algo payment transaction QR Code"
 
     - Save Algorand contact label as svg image:
-    node qrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
+    algoqrcode -w "AMESZ5UX7ZJL5M6GYEHXM63OMFCPOJ23UXCQ6CVTI2HVX6WUELYIY262WI" -l "emg110@gmail.com" -o file -f sample.svg 
 
 ```
 
